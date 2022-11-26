@@ -1,0 +1,30 @@
+{
+  "name": "dhgeek-ecommerce",
+  "version": "1.0.0",
+  "description": "This is an integrated e-commerce project for Digital House FullStack JS Bootcamp.\r > *Este é um projeto integrado de e-commerce para o treinamento FullStack Js Digital House.*",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danilo-batista/dhgeek-ecommerce.git"
+  },
+  "keywords": [],
+  "author": "@danilo-batista, @alilopes, @RenanppCosta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danilo-batista/dhgeek-ecommerce/issues"
+  },
+  "homepage": "https://github.com/danilo-batista/dhgeek-ecommerce#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "method-override": "^3.0.0"
+  }
+}
