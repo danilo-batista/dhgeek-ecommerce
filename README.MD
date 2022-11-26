@@ -20,6 +20,7 @@ This is an integrated e-commerce project for Digital House FullStack JS Bootcamp
     - [What we learned](#what-we-learned)
   - [Useful resources](#useful-resources)
   - [Authors](#authors)
+- [](#)
 
 <br>
 
@@ -72,10 +73,10 @@ DHGeek is a fictitious company that delivers technology solutions for the creati
 
 ```bash
 # Clone this repository
-$ git clone git@github.com:danilo-batista/dhGeek.git
+$ git clone git@github.com:danilo-batista/dhgeek-ecommerce.git
 
 # Access the project folder on your computer via terminal or code editor
-$ cd dhGeek
+$ cd dhgeek-ecommerce
 
 # Install the project dependencies
 $ npm install
