@@ -1,0 +1,13 @@
+/* Importação do módulo PATH para tratar dos caminhos. */
+const path = require('path');
+
+/* Inserção dos caminhos onde serão criadas as pastas do Sequelize. */
+const config = {
+    'config': path.resolve('src/config', 'database.js'),
+    'models-path': path.resolve('src/models'),
+    'seeders-path': path.resolve('src/database/seeders'),
+    'migrations-path': path.resolve('src/database/migrations')
+}
+
+/* Disponibilizar a configuração para uso externo. */
+module.exports = config;

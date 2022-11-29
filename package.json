@@ -19,12 +19,15 @@
   },
   "homepage": "https://github.com/danilo-batista/dhgeek-ecommerce#readme",
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "sequelize-cli": "^6.5.2"
   },
   "dependencies": {
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "express-validator": "^6.14.2",
-    "method-override": "^3.0.0"
+    "method-override": "^3.0.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.26.0"
   }
 }

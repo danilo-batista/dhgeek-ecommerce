@@ -3,6 +3,10 @@ const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
 
+
+/* Conexão com o banco de dados */
+const databaseConnection = require('./config/connectionFactory');
+
 /* Importação das rotas */
 const routes = require('./routes');
 
@@ -23,4 +27,4 @@ app.use(routes);
 
 /* Configurações de servidor */
 const port = 3333;
-app.listen(port, () => console.log(`Servidor rodando na porta ${port}!`));
+app.listen(port, () => console.log(`\n*** Servidor rodando na porta ${port}! ***`));
