@@ -84,6 +84,10 @@ header{
         width: 35vw;
     }
 
+    #search-area input{
+        font-size: 16px;
+    }
+
     #nav-bar{
         display: flex;
         gap: 2rem;
