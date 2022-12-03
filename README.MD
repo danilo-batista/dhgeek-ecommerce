@@ -81,6 +81,15 @@ $ cd dhgeek-ecommerce
 # Install the project dependencies
 $ npm install
 
+# Update the 'config/database.js' with your database configuration and if you aren't create yet, run the command:
+$ npx sequelize-cli db:create
+
+# Execute the migrations for create all tables
+$ npx sequelize-cli db:migrate
+
+# Insert some data in the tables for a better experience
+$ npx sequelize-cli db:seed
+
 # Execute the application
 $ npm start
 
