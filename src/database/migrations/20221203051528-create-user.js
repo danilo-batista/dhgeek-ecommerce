@@ -1,5 +1,7 @@
 'use strict';
 
+const User = require('../../models/User')
+
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('user',
@@ -68,6 +70,13 @@ module.exports = {
         freezeTableName: true,
         tableName: 'user'
       });
+
+    User.associate = (models) => {
+      User.belongsTo(models.UserTypes, {
+        foreignKey: 'typeId',
+        as: 'type'
+      })
+    };
   },
 
   async down(queryInterface, Sequelize) {
