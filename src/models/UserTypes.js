@@ -28,22 +28,18 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         {
-            // não adicionar os atributos (updatedAt, createdAt)
             timestamps: true,
-
-            /* não permite deletar do banco, mas inseri na coluna deletedAt a data da exclusão se o timestamps estiver ativado */
             paranoid: true,
-
-            // não adiciona camelcase para atributos gerados automaticamente
-            // então se definirmos updatedAt ele será criado como updated_at
             underscored: true,
-
-            // para evitar que o sequelize defina suas tabelas com o nome em plural automaticamente
-            // como permanencia para permanencium ative a opção como true
             freezeTableName: true,
-
-            // definindo o nome da sua tabela
             tableName: 'user_types'
         });
+
+    UserTypes.associate = (models) => {
+        User.hasOne(models.User, {
+            as: 'user'
+        })
+    };
+
     return UserTypes;
 };

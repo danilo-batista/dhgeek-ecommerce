@@ -1,8 +1,6 @@
-/* */
 module.exports = (sequelize, DataTypes) => {
-    /* nomeDoModel = sequelize.define("alias-mesmoDoModel", cols, config); */
     const User = sequelize.define(
-        'User',
+        'Address',
         {
             id: {
                 type: DataTypes.INTEGER,
@@ -10,39 +8,35 @@ module.exports = (sequelize, DataTypes) => {
                 primaryKey: true,
                 allowNull: false
             },
-            email: {
-                type: DataTypes.STRING(80),
+            cep: {
+                type: DataTypes.STRING(8),
                 allowNull: false
             },
-            password: {
-                type: DataTypes.STRING(20),
-                allowNull: false
-            },
-            firstName: {
+            address: {
                 type: DataTypes.STRING(40),
                 allowNull: false
             },
-            lastName: {
+            number: {
+                type: DataTypes.Integer,
+                allowNull: false
+            },
+            city: {
                 type: DataTypes.STRING(40),
                 allowNull: false
             },
-            birthday: {
-                type: DataTypes.DATEONLY,
+            uf: {
+                type: DataTypes.STRING(2),
                 allowNull: false
             },
-            cpf: {
-                type: DataTypes.STRING(11),
+            complement: {
+                type: DataTypes.STRING(40),
                 allowNull: false
             },
-            rg: {
-                type: DataTypes.STRING(9),
-                allowNull: false
-            },
-            typeId: {
+            userId: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 references: {
-                    model: 'user_types',
+                    model: 'user',
                     key: 'id'
                 }
             },
@@ -66,22 +60,15 @@ module.exports = (sequelize, DataTypes) => {
             paranoid: true,
             underscored: true,
             freezeTableName: true,
-            tableName: 'user'
+            tableName: 'address'
         });
 
-    User.associate = (models) => {
-        User.belongsTo(models.UserTypes, {
-            foreignKey: 'typeId',
-            as: 'type'
-        })
-    };
-
-    User.associate = (models) => {
-        User.hasMany(models.User, {
+    Address.associate = (models) => {
+        Address.belongsTo(models.User, {
             foreignKey: 'userId',
             as: 'user'
         })
     };
 
-    return User;
+    return Address;
 };
