@@ -1,141 +1,139 @@
-
-#hamburguer-menu, #search-button{
+#hamburguer-menu,
+#search-button {
     border: none;
     background-color: transparent;
 }
 
-#disney-logo{
+#disney-logo {
     width: 77px;
     height: 32px;
 }
 
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
 }
 
-#search-area{
-	border: none;
-	background-color: var(--disney-lightgray);
-	border-radius: 20px;
-	height: 40px;
-	width: 70vw;
-	display: none;
-	padding: 0 15px;
+#search-area {
+    border: none;
+    background-color: var(--disney-lightgray);
+    border-radius: 20px;
+    height: 40px;
+    width: 70vw;
+    display: none;
+    padding: 0 15px;
     position: relative;
 }
 
-#search-area input{
-	border: none;
-	outline: none;
-	background-color: var(--disney-lightgray);
-	border-radius: 20px;
-	font-family: "Avenir Next LT Pro";
+#search-area input {
+    border: none;
+    outline: none;
+    background-color: var(--disney-lightgray);
+    border-radius: 20px;
+    font-family: "Avenir Next";
     font-size: 12px;
 }
 
-#search-area button{
-	border: none;
-	outline: none;
-	background-color: transparent;
-	position: absolute;
-	top: 11px;
-	right: 0;
-	z-index: 10;
+#search-area button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    position: absolute;
+    top: 11px;
+    right: 0;
+    z-index: 10;
 }
 
-#login-button{
+#login-button {
     width: 126px;
-	height: 40px;
-	border-radius: 8px;
-	border-style: none;
-	background-color: var(--disney-blue);
-	color: var(--disney-white);
-	font-family: "Avenir Next LT Pro", sans-serif;
+    height: 40px;
+    border-radius: 8px;
+    border-style: none;
+    background-color: var(--disney-blue);
+    color: var(--disney-white);
+    font-family: "Avenir Next", sans-serif;
     font-weight: 700;
     font-size: 16px;
-	display: none;
-}
-
-#list-navbar{
     display: none;
 }
 
-@media(min-width: 768px){
-    header{
+#list-navbar {
+    display: none;
+}
+
+@media(min-width: 768px) {
+    header {
         justify-content: space-evenly;
     }
 
-    #search-button{
+    #search-button {
         display: none;
     }
 
-    #buttons-div{
+    #buttons-div {
         display: flex;
         gap: 2rem;
         align-items: center;
     }
 
-    #search-area{
+    #search-area {
         display: flex;
         width: 35vw;
     }
 
-    #search-area input{
+    #search-area input {
         font-size: 16px;
     }
 
-    #nav-bar{
+    #nav-bar {
         display: flex;
         gap: 2rem;
         align-items: center;
     }
 
-    #login-button{
+    #login-button {
         display: inline;
     }
 
-    #disney-logo{
+    #disney-logo {
         width: 97px;
         height: 40px;
     }
 
-    #cart-icon img{
+    #cart-icon img {
         width: 48px;
         height: 48px;
     }
 
 }
 
-@media(min-width: 1440px){
-    #hamburguer-menu{
+@media(min-width: 1440px) {
+    #hamburguer-menu {
         display: none;
     }
 
-    #list-navbar{
+    #list-navbar {
         display: flex;
         list-style-type: none;
         gap: 2rem;
     }
 
-    #list-navbar a{
+    #list-navbar a {
         text-decoration: none;
         color: var(--disney-lightblack);
-        font-family: "Avenir Next LT Pro";
+        font-family: "Avenir Next";
         font-size: 16px;
         font-weight: 600;
     }
 
-    #login-button{
+    #login-button {
         width: 178px;
     }
 
-    #search-area{
+    #search-area {
         width: 20vw;
     }
 }
-
-
