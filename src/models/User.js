@@ -70,17 +70,20 @@ module.exports = (sequelize, DataTypes) => {
         });
 
     User.associate = (models) => {
-        User.belongsTo(models.UserTypes, {
-            foreignKey: 'typeId',
-            as: 'type'
-        })
-    };
-
-    User.associate = (models) => {
-        User.hasMany(models.User, {
-            foreignKey: 'userId',
-            as: 'user'
-        })
+        [
+            User.belongsTo(models.UserTypes, {
+                foreignKey: 'typeId',
+                as: 'type'
+            }),
+            User.hasMany(models.Address, {
+                foreignKey: 'userId',
+                as: 'user'
+            }),
+            User.hasMany(models.UserLoginActivities, {
+                foreignKey: 'userId',
+                as: 'user'
+            })
+        ]
     };
 
     return User;

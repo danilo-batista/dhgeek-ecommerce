@@ -72,10 +72,20 @@ module.exports = {
       });
 
     User.associate = (models) => {
-      User.belongsTo(models.UserTypes, {
-        foreignKey: 'typeId',
-        as: 'type'
-      })
+      [
+        User.belongsTo(models.UserTypes, {
+          foreignKey: 'typeId',
+          as: 'type'
+        }),
+        User.hasMany(models.Address, {
+          foreignKey: 'userId',
+          as: 'user'
+        }),
+        User.hasMany(models.UserLoginActivities, {
+          foreignKey: 'userId',
+          as: 'user'
+        })
+      ]
     };
   },
 
