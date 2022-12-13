@@ -1,0 +1,32 @@
+<footer class="footer">
+	<div class="footer__header">
+		<a href="/"><img class="footer__header--logo" src="/images/brands/disney-logo.svg"
+			alt="logo" /></a>
+		<nav class="footer__nav">
+			<a class="footer__nav--link" href="/produtos/todos/classicos" />Clássicos</a>
+			<a class="footer__nav--link" href="/produtos/todos/marvel" />Marvel</a>
+			<a class="footer__nav--link" href="/produtos/todos/princesas" />Princesas</a>
+			<a class="footer__nav--link" href="/produtos/todos/starwars" />Star Wars</a>
+			<div class="footer__nav__break-container">
+				<hr class="footer--break">
+			</div>
+			<a class="footer__nav--link" href="/usuario/logar" />Login</a>
+		</nav>
+	</div>
+	<form class="footer__form" action="https://api.staticforms.xyz/submit" method="POST">
+		<legend class="footer__form--title">
+			Fale conosco
+		</legend>
+		<label class="footer__form--label label-name" for="name">Nome</label>
+		<input class="footer__form--input input-name" type="text" name="name" id="name" />
+		<label class="footer__form--label label-email" for="email">E-mail</label>
+		<input class="footer__form--input input-email" type="email" name="email" id="email" />
+		<label class="footer__form--label label-message" for="message">Deixe sua mensagem:</label>
+		<textarea class="footer__form--textarea input-text-area" name="message" placeholder="Digite sua messagem"></textarea>
+		<button class="footer__form--button" type="submit">Enviar</button>
+		<input class="footer__form--input" type="hidden" name="accessKey" value="29cb2464-1e88-48c9-a397-964b06b19673" />
+		<input class="footer__form--input" type="hidden" name="redirectTo" value="http://localhost:3333/" />
+	</form>
+	<script src="/scripts/app.js"></script>
+	<script src="/scripts/menu.js"></script>
+</footer>

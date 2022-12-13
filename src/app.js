@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 
 /* Importação das rotas */
 const routes = require('./routes');
+const userRoutes = require('./routes/userRoutes');
 
 /* Atribuição do Express a uma variável */
 const app = express();
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 
 app.use(routes);
+app.use('/usuario', userRoutes);
 
 /* Configurações de servidor */
 const port = 3333;
