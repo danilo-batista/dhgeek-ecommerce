@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/styles/base/reset.css" />
+    <link rel="stylesheet" href="/styles/base/normalize.css" />
+    <link rel="stylesheet" href="/styles/base/variables.css" />
+
+    <link rel="stylesheet" href="/styles/user.css" />
+
+    <script src="/scripts/userValidation.js" defer></script>
+
+    <title>Loja | Disney Brasil</title>
+  </head>
+  <body>
+    <%- include("partials/header.ejs") %>
+    <main class="user">
+      <div class="user__princess-card">
+        <img
+          src="/images/backgrounds/dory.jpg"
+          alt="Groot"
+        />
+      </div>
+      <section class="user__box">
+        <br>
+        <h2 class="user__box--title">Hora de recomeçar!</h2>
+        <form action="" class="user__form">
+          <p class="user__box__recovery-instructions">
+            Entre com o seu e-mail para começar com a sua redefinição de senha.
+            <br><br>
+            Se você não lembra do seu e-mail, acalme-se e entre em contato conosco que resolveremos isto juntos!</p>
+          <label
+            for="user__form__email--input"
+            class="user__form__email--label"
+            >Email*:</label
+          >
+          <span class="email--error"></span>
+          <input type="email" class="user__form__email--input" />
+          <button class="user__form--btn" type="submit">Reiniciar a senha</button>
+          <br><br><br>
+        </form>
+      </section>
+    </main>
+    <%- include("partials/copyright") %>
+  </body>
+</html>
