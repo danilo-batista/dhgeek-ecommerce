@@ -53,19 +53,19 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false
             },
             weight: {
-                type: DataTypes.STRING(10),
+                type: DataTypes.FLOAT(4, 2),
                 allowNull: false
             },
             height: {
-                type: DataTypes.STRING(10),
+                type: DataTypes.FLOAT(4, 2),
                 allowNull: false
             },
             width: {
-                type: DataTypes.STRING(10),
+                type: DataTypes.FLOAT(4, 2),
                 allowNull: false
             },
             depth: {
-                type: DataTypes.STRING(10),
+                type: DataTypes.FLOAT(4, 2),
                 allowNull: false
             },
             fullPrice: {
@@ -100,6 +100,10 @@ module.exports = (sequelize, DataTypes) => {
             Product.hasMany(models.ProductImages, {
                 foreignKey: 'productId',
                 as: 'productImages'
+            }),
+            Product.hasMany(models.ProductPromotions, {
+                foreignKey: 'productId',
+                as: 'productPromotions'
             })
         ]
     };

@@ -9,6 +9,11 @@ const productController = {
                     model: database.ProductImages,
                     as: 'productImages',
                     required: true
+                },
+                {
+                    model: database.ProductPromotions,
+                    as: 'productPromotions',
+                    required: true
                 }]
             }
         ).then((data) => { res.json(data); });
