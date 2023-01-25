@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define(
+    const Address = sequelize.define(
         'Address',
         {
             id: {
@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false
             },
             number: {
-                type: DataTypes.Integer,
+                type: DataTypes.INTEGER,
                 allowNull: false
             },
             city: {
@@ -58,7 +58,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             timestamps: true,
             paranoid: true,
-            underscored: true,
+            underscored: false,
             freezeTableName: true,
             tableName: 'address'
         });

@@ -145,6 +145,7 @@ module.exports = {
           birthday: "2022-08-08 03:43:52",
           cpf: "XQS66RSV8MC",
           rg: "HMC00MKO3",
+          avatar: "",
           typeId: "1"
         },
         {
