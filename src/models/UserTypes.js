@@ -30,14 +30,15 @@ module.exports = (sequelize, DataTypes) => {
         {
             timestamps: true,
             paranoid: true,
-            underscored: true,
+            underscored: false,
             freezeTableName: true,
             tableName: 'user_types'
         });
 
     UserTypes.associate = (models) => {
-        User.hasOne(models.User, {
-            as: 'user'
+        UserTypes.hasOne(models.User, {
+            as: 'user',
+            foreignKey: 'typeId'
         })
     };
 

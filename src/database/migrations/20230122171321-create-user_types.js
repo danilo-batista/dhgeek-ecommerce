@@ -1,10 +1,8 @@
 'use strict';
 
-const UserLoginActivities = require('../../models/UserLoginActivities')
-
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('user_login_activities',
+    await queryInterface.createTable('user_types',
       {
         id: {
           type: Sequelize.INTEGER,
@@ -12,15 +10,16 @@ module.exports = {
           primaryKey: true,
           allowNull: false
         },
-        userId: {
-          type: Sequelize.INTEGER,
-          allowNull: false,
-          references: {
-            model: 'user',
-            key: 'id'
-          }
+        type: {
+          type: Sequelize.STRING(80),
+          allowNull: false
         },
         createdAt: {
+          type: Sequelize.DATE,
+          defaultValue: new Date(),
+          allowNull: false
+        },
+        updatedAt: {
           type: Sequelize.DATE,
           defaultValue: new Date(),
           allowNull: false
@@ -33,20 +32,13 @@ module.exports = {
       {
         timestamps: true,
         paranoid: true,
-        underscored: true,
+        underscored: false,
         freezeTableName: true,
-        tableName: 'user_login_activities'
+        tableName: 'user_types'
       });
-
-    UserLoginActivities.associate = (models) => {
-      UserLoginActivities.belongsTo(models.User, {
-        foreignKey: 'userId',
-        as: 'user'
-      })
-    };
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('user_login_activities');
+    await queryInterface.dropTable('user_types');
   }
 };

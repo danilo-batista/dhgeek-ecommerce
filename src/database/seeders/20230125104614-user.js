@@ -13,6 +13,7 @@ module.exports = {
           birthday: "2022-04-08 02:47:35",
           cpf: "GMV18LSX9ZQ",
           rg: "QWE35XND6",
+          avatar: "",
           typeId: "3"
         },
         {
@@ -24,6 +25,7 @@ module.exports = {
           birthday: "2023-10-19 11:56:47",
           cpf: "EEI27SSX9CU",
           rg: "RUH27PYW2",
+          avatar: "",
           typeId: "1"
         },
         {
@@ -35,6 +37,7 @@ module.exports = {
           birthday: "2021-12-25 14:19:49",
           cpf: "HGY01FFN2LK",
           rg: "VMK08VTQ4",
+          avatar: "",
           typeId: "1"
         },
         {
@@ -46,6 +49,7 @@ module.exports = {
           birthday: "2023-06-23 06:32:20",
           cpf: "LFA77QEU6FT",
           rg: "PWI10SSN0",
+          avatar: "",
           typeId: "2"
         },
         {
@@ -57,6 +61,7 @@ module.exports = {
           birthday: "2022-02-27 18:17:28",
           cpf: "TCF05ROS2DU",
           rg: "FEO93XIK6",
+          avatar: "",
           typeId: "1"
         },
         {
@@ -68,6 +73,7 @@ module.exports = {
           birthday: "2023-04-05 07:06:14",
           cpf: "EPC52LBF8FZ",
           rg: "MLQ05TTV4",
+          avatar: "",
           typeId: "3"
         },
         {
@@ -79,6 +85,7 @@ module.exports = {
           birthday: "2023-08-12 22:22:27",
           cpf: "ITE88DID7KY",
           rg: "PHH78WAH2",
+          avatar: "",
           typeId: "3"
         },
         {
@@ -90,6 +97,7 @@ module.exports = {
           birthday: "2022-07-31 20:33:53",
           cpf: "WRK73UTP9UL",
           rg: "DIS82XDD5",
+          avatar: "",
           typeId: "2"
         },
         {
@@ -101,6 +109,7 @@ module.exports = {
           birthday: "2023-11-06 07:23:29",
           cpf: "XEF64XUP8YT",
           rg: "NKC76MZU8",
+          avatar: "",
           typeId: "2"
         },
         {
@@ -112,6 +121,7 @@ module.exports = {
           birthday: "2022-10-04 22:15:07",
           cpf: "PXW51EUW6VC",
           rg: "PKC66DLV1",
+          avatar: "",
           typeId: "1"
         },
         {
@@ -123,6 +133,7 @@ module.exports = {
           birthday: "2022-05-25 08:16:17",
           cpf: "BGN97DHD4RD",
           rg: "LRK42UTB8",
+          avatar: "",
           typeId: "1"
         },
         {
@@ -145,6 +156,7 @@ module.exports = {
           birthday: "2022-08-11 08:41:40",
           cpf: "RHK34NGS1RU",
           rg: "LXQ93EYK3",
+          avatar: "",
           typeId: "3"
         },
         {
@@ -156,6 +168,7 @@ module.exports = {
           birthday: "2022-04-06 17:15:26",
           cpf: "XGE23PWD8PZ",
           rg: "CLQ62LME2",
+          avatar: "",
           typeId: "3"
         },
         {
@@ -167,6 +180,7 @@ module.exports = {
           birthday: "2021-12-02 23:20:04",
           cpf: "WOX65HXT1XH",
           rg: "LBM44UNR9",
+          avatar: "",
           typeId: "2"
         },
         {
@@ -178,6 +192,7 @@ module.exports = {
           birthday: "2022-05-01 03:05:10",
           cpf: "QBO80QCJ7BE",
           rg: "LJM73LMJ5",
+          avatar: "",
           typeId: "2"
         },
         {
@@ -189,6 +204,7 @@ module.exports = {
           birthday: "2023-09-27 12:12:20",
           cpf: "SMV45LEP1MR",
           rg: "NKH80ETL4",
+          avatar: "",
           typeId: "1"
         },
         {
@@ -200,6 +216,7 @@ module.exports = {
           birthday: "2023-07-02 11:27:32",
           cpf: "ACF46HUS5RE",
           rg: "LKV24REO3",
+          avatar: "",
           typeId: "1"
         },
         {
@@ -211,6 +228,7 @@ module.exports = {
           birthday: "2023-06-14 09:00:04",
           cpf: "YMF28LRS8MI",
           rg: "CNR81ZBJ4",
+          avatar: "",
           typeId: "1"
         },
         {
@@ -222,6 +240,7 @@ module.exports = {
           birthday: "2022-08-14 09:16:33",
           cpf: "WVA85ELL8PB",
           rg: "REY82MFS1",
+          avatar: "",
           typeId: "3"
         }
       ], {});

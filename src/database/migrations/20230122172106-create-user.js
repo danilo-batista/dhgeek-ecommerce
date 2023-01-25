@@ -22,23 +22,27 @@ module.exports = {
         },
         firstName: {
           type: Sequelize.STRING(40),
-          allowNull: false
+          allowNull: true
         },
         lastName: {
           type: Sequelize.STRING(40),
-          allowNull: false
+          allowNull: true
         },
         birthday: {
           type: Sequelize.DATEONLY,
-          allowNull: false
+          allowNull: true
         },
         cpf: {
           type: Sequelize.STRING(11),
-          allowNull: false
+          allowNull: true
         },
         rg: {
           type: Sequelize.STRING(9),
-          allowNull: false
+          allowNull: true
+        },
+        avatar: {
+          type: Sequelize.STRING(255),
+          allowNull: true
         },
         typeId: {
           type: Sequelize.INTEGER,
@@ -66,7 +70,7 @@ module.exports = {
       {
         timestamps: true,
         paranoid: true,
-        underscored: true,
+        underscored: false,
         freezeTableName: true,
         tableName: 'user'
       });
@@ -79,11 +83,16 @@ module.exports = {
         }),
         User.hasMany(models.Address, {
           foreignKey: 'userId',
-          as: 'user'
+          as: 'address'
         }),
         User.hasMany(models.UserLoginActivities, {
           foreignKey: 'userId',
-          as: 'user'
+          as: 'userLoginActivities'
+
+        }),
+        User.hasMany(models.UserCreditCard, {
+          foreignKey: 'userId',
+          as: 'userCreditCard'
         })
       ]
     };
