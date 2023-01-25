@@ -16,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.STRING(255),
                 allowNull: false
             },
+            nickName: {
+                type: DataTypes.STRING(255),
+                allowNull: false
+            },
             validityMonth: {
                 type: DataTypes.STRING(2),
                 allowNull: false
@@ -54,7 +58,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             timestamps: true,
             paranoid: true,
-            underscored: true,
+            underscored: false,
             freezeTableName: true,
             tableName: 'user_credit_card'
         });
