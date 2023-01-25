@@ -72,6 +72,10 @@ module.exports = {
         ProductPromotions.belongsTo(models.Product, {
           foreignKey: 'productId',
           as: 'product'
+        }),
+        ProductPromotions.hasMany(models.Cart, {
+          foreignKey: 'productPromotionsId',
+          as: 'cart'
         })
       ]
     };

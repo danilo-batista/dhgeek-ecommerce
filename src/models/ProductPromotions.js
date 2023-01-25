@@ -65,10 +65,16 @@ module.exports = (sequelize, DataTypes) => {
     );
 
     ProductPromotions.associate = (models) => {
-        ProductPromotions.belongsTo(models.Product, {
-            foreignKey: 'productId',
-            as: 'product'
-        })
+        [
+            ProductPromotions.belongsTo(models.Product, {
+                foreignKey: 'productId',
+                as: 'product'
+            }),
+            ProductPromotions.hasMany(models.Cart, {
+                foreignKey: 'productPromotionsId',
+                as: 'cart'
+            })
+        ]
     };
 
     return ProductPromotions;

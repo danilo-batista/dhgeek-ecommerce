@@ -104,6 +104,14 @@ module.exports = {
         Product.hasMany(models.ProductImages, {
           foreignKey: 'productId',
           as: 'productImages'
+        }),
+        Product.hasMany(models.ProductPromotions, {
+          foreignKey: 'productId',
+          as: 'productPromotions'
+        }),
+        Product.hasMany(models.Cart, {
+          foreignKey: 'productId',
+          as: 'cart'
         })
       ]
     };
