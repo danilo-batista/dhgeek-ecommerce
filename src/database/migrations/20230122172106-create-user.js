@@ -93,6 +93,10 @@ module.exports = {
         User.hasMany(models.UserCreditCard, {
           foreignKey: 'userId',
           as: 'userCreditCard'
+        }),
+        User.hasMany(models.Order, {
+          foreignKey: 'userId',
+          as: 'order'
         })
       ]
     };
