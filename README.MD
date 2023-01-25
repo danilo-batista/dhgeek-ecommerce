@@ -88,7 +88,7 @@ $ npx sequelize-cli db:create
 $ npx sequelize-cli db:migrate
 
 # Insert some data in the tables for a better experience
-$ npx sequelize-cli db:seed
+$ npx sequelize-cli db:seed:all
 
 # Execute the application
 $ npm start
@@ -96,6 +96,20 @@ $ npm start
 # The server will start at port 3333
 Access the address: http://localhost:3333/
 
+```
+
+<br>
+
+### EndPoints da Aplicação
+
+Por ser uma API Rest, a aplicação está configurada para retornar um json ao ter os links acessados (endpoints). Para testar esses links, utilize o Postman.
+
+Seguem algumas sugestões de urls (substitua base_url pela url base do seu servidor, seja ele localhost ou um domínio exclusivo):
+
+Entidades
+```
+ base_url/users
+ base_url/contacts
 ```
 
 <br>
