@@ -21,6 +21,11 @@ module.exports = (sequelize, DataTypes) => {
                 defaultValue: new Date(),
                 allowNull: false
             },
+            updatedAt: {
+                type: DataTypes.DATE,
+                defaultValue: new Date(),
+                allowNull: false
+            },
             deletedAt: {
                 type: DataTypes.DATE,
                 allowNull: true
@@ -31,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
             paranoid: true,
             underscored: false,
             freezeTableName: true,
-            tableName: 'user'
+            tableName: 'user_login_activities'
         });
 
     UserLoginActivities.associate = (models) => {

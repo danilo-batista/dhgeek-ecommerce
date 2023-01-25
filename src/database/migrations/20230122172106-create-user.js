@@ -46,7 +46,7 @@ module.exports = {
         },
         typeId: {
           type: Sequelize.INTEGER,
-          allowNull: false,
+          allowNull: true,
           references: {
             model: 'user_types',
             key: 'id'

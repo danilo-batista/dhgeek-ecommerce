@@ -20,23 +20,23 @@ module.exports = (sequelize, DataTypes) => {
             },
             firstName: {
                 type: DataTypes.STRING(40),
-                allowNull: false
+                allowNull: true
             },
             lastName: {
                 type: DataTypes.STRING(40),
-                allowNull: false
+                allowNull: true
             },
             birthday: {
                 type: DataTypes.DATEONLY,
-                allowNull: false
+                allowNull: true
             },
             cpf: {
                 type: DataTypes.STRING(11),
-                allowNull: false
+                allowNull: true
             },
             rg: {
                 type: DataTypes.STRING(9),
-                allowNull: false
+                allowNull: true
             },
             avatar: {
                 type: DataTypes.STRING(255),
@@ -44,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
             },
             typeId: {
                 type: DataTypes.INTEGER,
-                allowNull: false,
+                allowNull: true,
                 references: {
                     model: 'user_types',
                     key: 'id'
@@ -68,7 +68,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             timestamps: true,
             paranoid: true,
-            underscored: true,
+            underscored: false,
             freezeTableName: true,
             tableName: 'user'
         });
@@ -77,19 +77,20 @@ module.exports = (sequelize, DataTypes) => {
         [
             User.belongsTo(models.UserTypes, {
                 foreignKey: 'typeId',
-                as: 'type'
+                as: 'user_types'
             }),
             User.hasMany(models.Address, {
                 foreignKey: 'userId',
-                as: 'user'
+                as: 'address'
             }),
             User.hasMany(models.UserLoginActivities, {
                 foreignKey: 'userId',
-                as: 'user'
+                as: 'userLoginActivities'
+
             }),
-            User.hasMany(models.UserCrditCard, {
+            User.hasMany(models.UserCreditCard, {
                 foreignKey: 'userId',
-                as: 'user'
+                as: 'userCreditCard'
             })
         ]
     };
