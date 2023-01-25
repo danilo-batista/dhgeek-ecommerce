@@ -16,6 +16,7 @@ This is an integrated e-commerce project for Digital House FullStack JS Bootcamp
   - [How to install or execute this project](#how-to-install-or-execute-this-project)
     - [Prerequisites](#prerequisites)
     - [Run the project](#run-the-project)
+    - [EndPoints da Aplicação](#endpoints-da-aplicação)
   - [Our process](#our-process)
     - [What we learned](#what-we-learned)
   - [Useful resources](#useful-resources)
@@ -110,6 +111,9 @@ Entidades
 ```
  base_url/users
  base_url/contacts
+ base_url/products
+ base_url/cart
+ base_url/order
 ```
 
 <br>
