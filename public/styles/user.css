@@ -1,0 +1,224 @@
+/* MOBILE FIRST */
+body {
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user img {
+  display: none;
+}
+
+.user__box,
+.user__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Avenir Next LT Pro";
+  font-weight: 700;
+  color: var(--disney-gray);
+}
+
+.user__box {
+  width: 90vw;
+
+  mix-blend-mode: normal;
+  border-radius: 16px;
+
+  background-color: var(--disney-lightgray);
+}
+
+.user__box--title {
+  margin: 4rem 0 3rem 0;
+
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+.user__box__recovery-instructions {
+  line-height: 15px;
+  margin-bottom: 61px;
+}
+
+.user__form {
+  width: 240px;
+}
+
+.user__form__email--label,
+.user__form__password--label {
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.user__form__email--input,
+.user__form__password--input {
+  width: 240px;
+  min-height: 2rem;
+
+  border: 1px solid var(--disney-mediumblue);
+  border-radius: 8px;
+}
+
+.user__form__email--input {
+  margin-bottom: 2rem;
+}
+
+.user__form__password--input {
+  margin-bottom: 1.5rem;
+}
+
+.email--error,
+.password--error {
+  align-self: flex-start;
+}
+
+.user__form__agreement {
+  display: flex;
+  justify-content: center;
+  align-self: flex-start;
+  
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+.user__form__checkbox--input {
+  align-self: flex-start;
+  width: 1rem;
+  height: 1rem;
+
+  background-color: var(--disney-darkgray);
+}
+
+.user__form__checkbox--label {
+  font-size: 0.6875rem;
+  line-height: 15px;
+}
+
+.user__form__remember-password {
+  font-size: 0.6875rem;
+  line-height: 15px;
+  margin-bottom: 40px;
+}
+
+.user__form--btn {
+  width: 242px;
+  height: 48px;
+
+  line-height: 22px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 22px;
+  color: var(--disney-white);
+
+  border: 1px solid var(--disney-blue);
+  border-radius: 8px;
+
+  margin-bottom: 2rem;
+
+  background-color: var(--disney-blue);
+
+  cursor: pointer;
+}
+
+.user__user-alternative {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.6875rem;
+  line-height: 15px;
+  text-align: center;
+
+  margin-bottom: 3.87rem;
+}
+
+.user__user-alternative--link {
+  text-decoration: none;
+  color: var(--disney-blue);
+}
+
+/* 768px */
+
+@media(min-width: 768px) {
+  .user__form {
+    width: 280px;
+  }
+
+  .user__form__email--input,
+  .user__form__password--input {
+    width: 280px;
+  }
+
+  .user__form--btn {
+    width: 280px;
+    height: 56px;
+  }
+}
+
+/* 1440px */
+
+@media(min-width: 1440px) {
+  .user__princess-card {
+    display: flex;
+
+    width: 648px;
+  }
+
+  .user img {
+    display: flex;
+    align-self: center;
+    border-radius: 8px 0 0 8px;
+  }
+
+  .user__box {
+    width: 720px;
+    height: 810px;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .user__box--title {
+    font-size: 2rem;
+  }
+
+  .user__form {
+    width: 344px;
+  }
+
+  .user__form__email--label,
+  .user__form__password--label {
+    font-size: 1.2rem;
+  }
+
+  .user__form__email--input,
+  .user__form__password--input {
+    width: 344px;
+  }
+
+  .user__form__checkbox--label {
+    font-size: 1rem;
+  }
+
+  .user__form__remember-password {
+    font-size: 1rem;
+  }
+
+  .user__user-alternative {
+    font-size: 1rem;
+  }
+
+  .user__form--btn {
+    width: 344px;
+    height: 56px;
+
+    font-size: 1.2rem;
+  }
+}

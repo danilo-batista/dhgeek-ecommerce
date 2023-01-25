@@ -1,11 +1,16 @@
-@import url('https://fonts.cdnfonts.com/css/avenir-next-lt-pro');
+@font-face {
+    font-family: 'Avenir Next';
+    src: url("/fonts/");
+}
 
 :root {
     --disney-blue: #0082F0;
+    --disney-medium2blue: #70A9FF;
     --disney-mediumblue: #5D9FCE;
     --disney-lightblue: #98C0DF;
     --disney-mediumgray: #BBBBBB;
     --disney-darkgray: #757575;
     --disney-lightgray: #F5F5F5;
     --disney-white: #FFFFFF;
+    --disney-lightblack: #464646;
 }

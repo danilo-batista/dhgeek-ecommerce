@@ -22,7 +22,19 @@ const userController = {
                 }]
             }
         ).then((data) => { res.json(data); });
-    }
+    },
+    /** This methods below will be update soon. */
+    cadastrar: (req, res) => {
+        res.render('cadastrar');
+    },
+
+    logar: (req, res) => {
+        res.render('logar');
+    },
+
+    recuperar: (req, res) => {
+        res.render('recuperar');
+    },
 };
 
 module.exports = userController;

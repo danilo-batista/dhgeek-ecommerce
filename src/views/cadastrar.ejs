@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/styles/base/reset.css" />
+    <link rel="stylesheet" href="/styles/base/normalize.css" />
+    <link rel="stylesheet" href="/styles/base/variables.css" />
+
+    <link rel="stylesheet" href="/styles/user.css" />
+
+    <script src="/scripts/userValidation.js" defer></script>
+
+    <title>Loja | Disney Brasil</title>
+  </head>
+  <body>
+    <%- include("partials/header.ejs") %>
+    <main class="user">
+        <img
+          src="/images/backgrounds/princess-frog.jpeg"
+          alt="A Princesa e O Sapo"
+        />
+      </div>
+      <section class="user__box">
+        <h2 class="user__box--title">Vamos começar?</h2>
+        <form action="" class="user__form">
+          <label
+            for="user__form__email--input"
+            class="user__form__email--label"
+            >Email*:</label
+          >
+          <span class="email--error"></span>
+          <input type="email" class="user__form__email--input" />
+          <label
+            for="user__form__password--input"
+            class="user__form__password--label"
+            >Senha*:</label
+          >
+          <span class="password--error"></span>
+          <input type="password" class="user__form__password--input" />
+          <div class="user__form__agreement">
+            <input type="checkbox" class="user__form__checkbox--input" />
+            <label
+              for="user__form__checkbox--input"
+              class="user__form__checkbox--label"
+              >Concordo com os termos e condições.</label
+            >
+          </div>
+          <button class="user__form--btn" type="submit">Cadastrar</button>
+        </form>
+        <p class="user__user-alternative">
+          Opa, já possui uma conta? Então,
+          <a class="user__user-alternative--link" href="">vamos lá</a>!
+        </p>
+      </section>
+    </main>
+    <%- include("partials/copyright") %>
+  </body>
+</html>
