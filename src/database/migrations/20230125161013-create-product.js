@@ -98,6 +98,15 @@ module.exports = {
         freezeTableName: true,
         tableName: 'product'
       });
+
+    Product.associate = (models) => {
+      [
+        Product.hasMany(models.ProductImages, {
+          foreignKey: 'productId',
+          as: 'productImages'
+        })
+      ]
+    };
   },
 
   async down(queryInterface, Sequelize) {

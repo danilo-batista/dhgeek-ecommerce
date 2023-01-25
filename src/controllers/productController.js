@@ -5,6 +5,11 @@ const productController = {
         database.Product.findAll(
             {
                 order: [['id', 'ASC']],
+                include: [{
+                    model: database.ProductImages,
+                    as: 'productImages',
+                    required: true
+                }]
             }
         ).then((data) => { res.json(data); });
     },
