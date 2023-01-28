@@ -1,6 +1,9 @@
 const database = require('../models/index');
 
 const cartController = {
+    cart: (req, res) => {
+        res.render('../views/cart/');
+    },
     getProducts: (req, res) => {
         database.Cart.findAll(
             {
