@@ -13,6 +13,7 @@ routes.get('/users', userController.getUsers);
 routes.get('/contacts', contactController.getMessages);
 routes.get('/products', productController.getProducts);
 routes.get('/cart', cartController.getProducts);
+routes.get('/cartExample', cartController.cart);
 routes.get('/order', orderController.getOrder);
 
 module.exports = routes;
