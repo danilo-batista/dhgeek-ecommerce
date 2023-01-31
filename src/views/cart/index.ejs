@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/styles/base/reset.css" />
+    <link rel="stylesheet" href="/styles/base/normalize.css" />
+    <link rel="stylesheet" href="/styles/base/variables.css" />
+
+
+    <link rel="stylesheet" href="/styles/cart.css">
+
+    <title>Carrinho</title>
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+
+    <main>
+        <section class="container__cart">
+            <div class="container__cart__title">
+                <h3>Carrinho</h3>
+                <span>Confira os produtos escolhidos</span>
+                <hr>
+            </div>
+            <div class="container__cart__items">
+                <h6>Estátua The Child na cadeira | Baby Yoda  Mandalorian</h6>
+                <div class="container__cart__items--button-items">
+                    <div class="container__cart__items--button-action-items">
+                        <button><img src="/images/icons/remove-item.svg" alt="remove-item"></button>
+                        <span>000</span>
+                        <button><img src="/images/icons/add-item.svg" alt="add-item"></button>
+                    </div>
+                    <div class="container__cart__items--button-delete-items">
+                        <a href="#"><img src="/images/icons/trash.svg" alt="trash"></a>
+                    </div>
+                </div>
+                <div class="container__cart__items--prices-item">
+                    <span class="price-no-discount"><s>R$100.000,00</s></span>
+                    <span class="price-with-discount">R$100.000,00</span>
+                </div>
+                <div class="container__cart__items--total-price-item">
+                    <span>R$100.000,00</span>
+                </div>
+                <div class="container__cart__items--button-delete-items__medium-screen">
+                    <a href="#"><img src="/images/icons/trash.svg" alt="trash"></a>
+                </div> 
+            </div>
+
+            <div class="container__cart__items">
+                <h6>Estátua The Child na cadeira | Baby Yoda  Mandalorian</h6>
+                <div class="container__cart__items--button-items">
+                    <div class="container__cart__items--button-action-items">
+                        <button><img src="/images/icons/remove-item.svg" alt="remove-item"></button>
+                        <span>000</span>
+                        <button><img src="/images/icons/add-item.svg" alt="add-item"></button>
+                    </div>
+                    <div class="container__cart__items--button-delete-items">
+                        <a href="#"><img src="/images/icons/trash.svg" alt="trash"></a>
+                    </div>
+                </div>
+                <div class="container__cart__items--prices-item">
+                    <span class="price-no-discount"><s>R$100.000,00</s></span>
+                    <span class="price-with-discount">R$100.000,00</span>
+                </div>
+                <div class="container__cart__items--total-price-item">
+                    <span>R$100.000,00</span>
+                </div>
+            </div>
+
+            <div class="container__cart__final-price">
+                <p>Total:    <span>R$100.000,00</span></p>
+                <button>Finalizar Compra</button>
+            </div>
+
+        </section>
+    </main>
+</body>

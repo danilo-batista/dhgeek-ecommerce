@@ -1,13 +1,14 @@
 .copyright {
   display: flex;
   justify-content: center;
-  
+
   width: 100vw;
 
   background: var(--disney-white);
 }
 
 .copyright__text {
+  font-family: "Avenir Next";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -16,6 +17,6 @@
   align-content: center;
 
   width: 80vw;
-  
+
   color: #464646;
 }

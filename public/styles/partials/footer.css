@@ -8,8 +8,8 @@
   width: 100vw;
 
   background-color: var(--disney-mediumgray);
-  
-  font-family: "Avenir Next LT Pro";
+
+  font-family: "Avenir Next";
   font-weight: 700;
   color: var(--disney-gray);
 }
@@ -55,7 +55,7 @@
   height: 2px;
 
   margin: 15px auto 15px auto;
-  
+
   background-color: var(--disney-mediumblue);
   border: 0;
 }
@@ -162,7 +162,7 @@
     left: 2rem;
     max-width: 276.35px;
   }
-  
+
   .footer__form--textarea {
     max-width: 348.84px;
   }
