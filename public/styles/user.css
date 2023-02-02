@@ -1,7 +1,7 @@
 /* MOBILE FIRST */
 body {
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
 }
 
 .user {
@@ -21,7 +21,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  font-family: "Avenir Next LT Pro";
+  font-family: "Avenir Next";
   font-weight: 700;
   color: var(--disney-gray);
 }
@@ -85,7 +85,7 @@ body {
   display: flex;
   justify-content: center;
   align-self: flex-start;
-  
+
   gap: 1rem;
   margin-bottom: 3.5rem;
 }
