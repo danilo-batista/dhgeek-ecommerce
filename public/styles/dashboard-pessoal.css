@@ -1,0 +1,375 @@
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+aside{
+    padding: 8rem 0.7rem;
+}
+
+form{
+    width: 100%;
+}
+
+.no-low-screen{
+    display: none;
+}
+
+
+.container__dashboard{
+    background-color: var(--disney-light2gray);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 82%;
+    margin-top: 3rem;
+}
+
+.container__dashboard__personal-data,
+.container__dashboard__personal-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container-avatar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container__dashboard__personal-data--avatar__tittle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container__dashboard__personal-data--avatar,
+.container__dashboard__personal-data--login,
+.container__dashboard__personal-info--delivery,
+.container__dashboard__personal-info--register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container__dashboard__personal-data--avatar h3,
+.container__dashboard__personal-data--login h3,
+.container__dashboard__personal-info--delivery h3,
+.container__dashboard__personal-info--register h3{
+    border-bottom: 1px solid #000;
+    width: 90%;
+    text-align: center;
+}
+
+.photo-avatar{
+    background-color: var(--disney-medium2gray);
+    height: 128px;
+    width: 104px;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.container__input-avatar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-choose-avatar{
+    text-align: center;
+    width: 70%;
+}
+
+.text-choose-avatar h6{
+    margin: 0;
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: 700;
+}
+
+.text-choose-avatar p{
+    margin-top: 0.2rem;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 14px;
+    color: var(--disney-mediumgray);
+}
+
+input[type="file"]{
+    display: none;
+}
+
+.input-avatar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.input-avatar p{
+    margin: 0;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 700;
+    width: 45%;
+}
+
+.input-avatar label{
+    background-color: var(--disney-blue2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 24px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--disney-white);
+}
+
+.container-input{
+    padding: 0 2rem;
+    margin-bottom: 1rem;
+}
+
+.container__input-button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-input label{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.container__input-button input{
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #70A9FF;
+    background-color: var(--disney-light2gray);
+    color: var(--disney-dark2gray);
+    width: 80%;
+}
+
+.input--no-button{
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #70A9FF;
+    color: var(--disney-dark3gray);
+    background-color: var(--disney-light3gray);
+}
+
+.container__button{
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 2rem 1rem 2rem; 
+}
+
+#update-button{
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--disney-blue2);
+    color: var(--disney-white);
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#input-password,
+#input-cep,
+#input-city,
+#input-birth{
+    margin-bottom: 1rem;
+}
+
+#input-address{
+    display: flex;
+    flex-direction: column;
+}
+
+.container__input--localization{
+    display: flex;
+    flex-direction: column;
+}
+
+@media(min-width:768px){
+    .no-medium-screen{
+        display: none
+    }
+
+    .no-low-screen{
+        display: flex;
+    }
+
+    aside{
+        padding: 8rem 1.5rem;
+    }
+
+    .container__dashboard{
+        width: 88%;
+    }
+
+    .container__dashboard__personal-data{
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .container__dashboard__personal-data--avatar{
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .container-input{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        width: 100%;
+    }
+
+    .container__input-avatar{
+        height: 100%;
+        justify-content: space-evenly;
+    }
+
+    .container-input label{
+        width: 80px;
+    }
+
+    .container__input-login{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #input-password,
+    #input-cep,
+    #input-city,
+    #input-birth{
+    margin-bottom: 0;
+}
+
+.container__dashboard__personal-data--avatar,
+.container__dashboard__personal-data--login{
+    min-height: 200px;
+    justify-content: stretch;
+}
+
+.input-avatar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.input-avatar label{
+    width: 110px;
+}
+
+.container-avatar{
+    flex-direction: row;
+}
+
+.container-input{
+    justify-content: flex-start;
+}
+
+.container__input--CEP{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.container__input--CEP label{
+    width: 7%;
+}
+
+.container__input--Number{
+    width: 44%;
+    justify-content: flex-end;
+    gap: 0.3rem;
+}
+
+.container__input--Number label{
+    margin-right: 0.6rem;
+}
+
+.container__input--Number input{
+    width: 17%;
+}
+
+#input-address{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.container__input--localization{
+    flex-direction: row;
+    gap: 10px;
+}
+
+#input-city{
+    width: 90%;
+}
+
+#input-UF{
+    width: 8%;
+}
+
+
+#input-address input{
+    width: 100%;
+}
+
+#input-complement{
+    width: 100%;
+    justify-content: space-around;
+}
+
+#input-complement label{
+    width: 100px;
+}
+
+
+.container__dashboard__personal-info--register .container__input-button{
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.container__dashboard__personal-info--register label{
+    width: 73px;
+}
+
+#update-button{
+    width: 200px;
+    height: 40px;
+}
+
+}
+
+@media(min-width:1440px){
+    .container-avatar{
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .input-avatar{
+        flex-direction: row;
+    }
+}
+

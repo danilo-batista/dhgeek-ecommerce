@@ -1,4 +1,6 @@
 const database = require('../models/index');
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 const userController = {
     getUsers: (req, res) => {
@@ -23,6 +25,54 @@ const userController = {
             }
         ).then((data) => { res.json(data); });
     },
+    createUser: async (req,res) =>{
+        const { email, password } = req.body;
+        try {
+            const passwordCript = await bcrypt.hash(password, 10)
+            const user = await database.User.create({
+                email,
+                password: passwordCript
+            })
+            
+            return res.send(user);
+            //res.redirect("/logar");
+
+
+        } catch (err) {
+            return res.status(500).send({message:err.message})
+        }
+    },
+    loginUser: async (req, res) =>{
+        const { email, password } = req.body;
+        try {
+            const user = await database.User.findOne({
+                where:{email}
+            })
+
+            if(user){
+                const passwordValid = bcrypt.compare(password, user.password);
+                if(passwordValid){
+                    const token = jwt.sign({id: user.id}, process.env.SECRET, {expiresIn: "24h"});
+                    localStorage.setItem("token", JSON.stringify(token));
+                    return res.status(200).send({message:"Login feito com sucesso", token});
+                }else{
+                    return res.status(404).send({message:"Usuário ou senha."});
+                }
+            }else{
+                return res.status(404).send({message:"Usuário ou senha."});
+            }
+
+            
+        } catch (err) {
+            return res.status(500).send({message:err.message});
+        }
+    },
+    dashboardUser: async (req,res) =>{
+        res.render("../views/dashboard/pessoal");
+    },
+
+
+
     /** This methods below will be update soon. */
     cadastrar: (req, res) => {
         res.render('cadastrar');
