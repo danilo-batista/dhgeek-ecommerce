@@ -6,6 +6,7 @@ main{
 .container__cart{
     background-color: var(--disney-light2gray);
     width: 85%;
+    margin-top: 60px;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -43,6 +44,10 @@ main{
     align-items: center;
     margin: 0 1.6rem 0 1.6rem;
     border-radius: 0.5rem;
+}
+
+.img-product-item{
+    display: none;
 }
 
 .container__cart__items:nth-of-type(even){
@@ -147,14 +152,29 @@ main{
     margin: 1.3rem 0;
 }
 
+button{
+    cursor: pointer;
+}
+
 @media(min-width:768px){
+    .container__cart{
+        min-width: 95%;
+        width: auto;
+    }
+
     .container__cart__title h3{
         font-size: 24px;
     }
 
+    .container__cart__title span{
+        font-size: 16px;
+    }
+
     .container__cart__items{
         flex-direction: row;
-        gap: 0.8rem;
+        justify-content: space-evenly;
+        min-width: 90%;
+        min-height: 72px;
     }
 
     .container__cart__items h6{
@@ -191,5 +211,67 @@ main{
         margin: 0;
         display: flex;
         order: 3;
+    }
+
+    .container__cart__final-price{
+        width: 95%;
+    }
+
+    .container__cart__final-price p{
+        display: flex;
+        align-self: flex-end;
+        margin-right: 2rem;
+    }
+}
+
+@media(min-width:1440px){
+    .container__cart{
+        min-width: 84%;
+        min-height: 20vw;
+    }
+
+    .container__cart__items{
+        justify-content: space-between;
+    }
+
+    .img-product-item{
+        display: inline;
+        width: 72px;
+        height: 72px;
+    }
+
+    .container__cart__items h6,
+    .price-with-discount,
+    .container__cart__items--total-price-item,
+    .container__cart__items--button-action-items span{
+        font-size: 16px
+    }
+
+    .price-no-discount{
+        font-size: 14px;
+    }
+
+    .container__cart__final-price button{
+        font-size: 20px;
+        width: 390px;
+        height: 56px;
+    }
+
+    .container__cart__final-price p{
+        font-size: 16px;
+    }
+
+    .container__cart__final-price span{
+        font-size: 20px;
+    }
+
+    .container__cart__items--button-delete-items__medium-screen{
+        width: 10%;
+        justify-content: center;
+    }
+
+    .copyright{
+        position: absolute;
+        bottom: 0;
     }
 }
