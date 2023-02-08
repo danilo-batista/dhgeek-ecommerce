@@ -1,18 +1,20 @@
-const { jwt } = require("jsonwebtoken");
+const jwt  = require("jsonwebtoken");
 
 const validationToken = (req,res,next) =>{
-    try {
+    const {token} = req.cookies;
 
-      if(localStorage.getItem("token") === null){
-        return res.redirect("/usuario/login")
-      }
-        
+    if(!token){
+      return res.redirect("/usuario/logar");
+    }
+  
+    try{
         const decoded = jwt.verify(token, process.env.SECRET);
         console.log(decoded);
 
       } catch (err) {
-        localStorage.getItem("token", "");
-        return res.redirect("/logar")
+        console.log(err);
+        res.cookie("token", "");
+        return res.redirect("/usuario/logar");
       }
 
     next();

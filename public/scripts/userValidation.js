@@ -11,35 +11,35 @@ function userFormValidation(userEvent) {
 
   // EMAIL VALIDATION
   let emailError = document.querySelector('.email--error');
-  if (userEmail.value = "") {
-    emailError.innerHTML = "Por favor, informe o seu e-mail!";
-    emailError.style.display = "flex";
-    emailError.style.color = "red"
-    validationKey += 1;
-  } else if (validationFilter.test(userEmail.value)) {
-    emailError.style.display = "none";
-  } else {
-    emailError.innerHTML = "Formato de e-mail inválido!";
-    emailError.style.display = "flex";
-    emailError.style.color = "red"
-    validationKey += 1;
-  }
+  // if (userEmail.value = "") {
+  //   emailError.innerHTML = "Por favor, informe o seu e-mail!";
+  //   emailError.style.display = "flex";
+  //   emailError.style.color = "red"
+  //   validationKey += 1;
+  // } else if (validationFilter.test(userEmail.value)) {
+  //   emailError.style.display = "none";
+  // } else {
+  //   emailError.innerHTML = "Formato de e-mail inválido!";
+  //   emailError.style.display = "flex";
+  //   emailError.style.color = "red"
+  //   validationKey += 1;
+  // }
 
   // PASSWORD VALIDATION
   let passwordError = document.querySelector('.password--error');
-  if (userPassword.value = "") {
-    passwordError.innerHTML = "Você precisa escolher uma senha!";
-    passwordError.style.display = "flex";
-    passwordError.style.color = "red"
-    validationKey += 1;
-  } else if (userPassword.value.length < 6) {
-    passwordError.innerHTML = "A sua senha precisa ter ao menos 06 (seis) caracteres!";
-    passwordError.style.display = "flex";
-    passwordError.style.color = "red"
-    validationKey += 1;
-  } else {
-    passwordError.style.display = "none";
-  }
+  // if (userPassword.value = "") {
+  //   passwordError.innerHTML = "Você precisa escolher uma senha!";
+  //   passwordError.style.display = "flex";
+  //   passwordError.style.color = "red"
+  //   validationKey += 1;
+  // } else if (userPassword.value.length < 6) {
+  //   passwordError.innerHTML = "A sua senha precisa ter ao menos 06 (seis) caracteres!";
+  //   passwordError.style.display = "flex";
+  //   passwordError.style.color = "red"
+  //   validationKey += 1;
+  // } else {
+  //   passwordError.style.display = "none";
+  // }
 
   // VALIDATION KEY VERIFICATION
   if(validationKey > 0) {

@@ -7,8 +7,8 @@ const router = express.Router();
 router.get('/cadastrar', Usuario.cadastrar);
 router.post("/cadastrar", Usuario.createUser);
 router.get('/logar', Usuario.logar);
-router.post("/login", validationToken, Usuario.loginUser);
+router.post("/login",  Usuario.loginUser);
 router.get('/recuperar', Usuario.recuperar);
-router.get("/perfilPessoal", Usuario.dashboardUser);
+router.get("/perfilPessoal",validationToken, Usuario.dashboardUser);
 
 module.exports = router;

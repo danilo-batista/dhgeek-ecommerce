@@ -34,8 +34,8 @@ const userController = {
                 password: passwordCript
             })
             
-            return res.send(user);
-            //res.redirect("/logar");
+            //return res.send(user);
+            res.redirect("/usuario/logar");
 
 
         } catch (err) {
@@ -44,6 +44,8 @@ const userController = {
     },
     loginUser: async (req, res) =>{
         const { email, password } = req.body;
+        console.log(email, password)
+        console.log(req.body)
         try {
             const user = await database.User.findOne({
                 where:{email}
@@ -53,8 +55,9 @@ const userController = {
                 const passwordValid = bcrypt.compare(password, user.password);
                 if(passwordValid){
                     const token = jwt.sign({id: user.id}, process.env.SECRET, {expiresIn: "24h"});
-                    localStorage.setItem("token", JSON.stringify(token));
-                    return res.status(200).send({message:"Login feito com sucesso", token});
+                    res.cookie("token", token);
+                    //return res.status(200).send({message:"Login feito com sucesso", token});
+                    return res.redirect("/")
                 }else{
                     return res.status(404).send({message:"Usuário ou senha."});
                 }

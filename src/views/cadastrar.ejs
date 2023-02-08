@@ -25,21 +25,21 @@
       </div>
       <section class="user__box">
         <h2 class="user__box--title">Vamos começar?</h2>
-        <form action="" class="user__form">
+        <form method="post" action="/usuario/cadastrar" class="user__form">
           <label
             for="user__form__email--input"
             class="user__form__email--label"
             >Email*:</label
           >
           <span class="email--error"></span>
-          <input type="email" class="user__form__email--input" />
+          <input type="email" class="user__form__email--input" name="email" />
           <label
             for="user__form__password--input"
             class="user__form__password--label"
             >Senha*:</label
           >
           <span class="password--error"></span>
-          <input type="password" class="user__form__password--input" />
+          <input type="password" class="user__form__password--input" name="password" />
           <div class="user__form__agreement">
             <input type="checkbox" class="user__form__checkbox--input" />
             <label
