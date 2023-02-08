@@ -10,6 +10,7 @@ const databaseConnection = require('./config/connectionFactory');
 /* Importação das rotas */
 const routes = require('./routes');
 const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
 
 /* Atribuição do Express a uma variável */
 const app = express();
@@ -26,6 +27,7 @@ app.use(methodOverride('_method'));
 
 app.use(routes);
 app.use('/usuario', userRoutes);
+app.use('/produto', productRoutes)
 
 /* Configurações de servidor */
 const port = 3333;
