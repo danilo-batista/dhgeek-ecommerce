@@ -18,6 +18,10 @@ const productController = {
             }
         ).then((data) => { res.json(data); });
     },
+
+    exibir: (req, res) => {
+        res.render('../views/produto');
+    },
 };
 
 module.exports = productController;
