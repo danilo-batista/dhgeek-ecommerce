@@ -2,6 +2,8 @@
 const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
+const dotevn = require("dotenv");
+const cookieParser = require("cookie-parser");
 
 
 /* Conexão com o banco de dados */
@@ -20,9 +22,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 /* Uso dos módulos importados e middlewares */
+dotevn.config();
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cookieParser());
 app.use(methodOverride('_method'));
 
 app.use(routes);

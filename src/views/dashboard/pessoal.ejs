@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/styles/base/reset.css" />
+    <link rel="stylesheet" href="/styles/base/normalize.css" />
+    <link rel="stylesheet" href="/styles/base/variables.css" />
+
+
+    <link rel="stylesheet" href="/styles/dashboard-pessoal.css">
+
+    <title>Perfil Pessoal</title>
+</head>
+<body>
+    <%- include("../partials/header") %>
+
+    <main>
+        <aside>
+            <a href="#"> <img src="/images/icons/config.svg" alt="config"> </a>
+        </aside>
+        <section class="container__dashboard">
+        <form action="#">
+            <div class="container__dashboard__personal-data">
+                <div class="container__dashboard__personal-data--avatar"> 
+                    <h3>Avatar</h3>
+                    <div class="container-avatar">
+                        <div class="photo-avatar"></div>
+                    <div class="container__input-avatar">
+                        <div class="text-choose-avatar">
+                            <h6>Escolha o avatar.</h6>
+                            <p>São permitidos apenas arquivos .jpg e .svg.</p>
+                        </div>
+                        <div class="input-avatar">
+                            <input type="file" name="avatar" id="avatar">
+                            <p>Nenhum arquivo selecionado.</p>
+                            <label for="avatar">Enviar</label>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="container__dashboard__personal-data--login">
+                    <h3>Dados de Login</h3>
+                    <div class="container__input-login">
+                        <div class="container-input">
+                            <label>E-mail:</label>
+                            <div class="container__input-button">
+                                <input type="text">
+                                <a href="#"><img src="/images/icons/admin-edit_icon.svg" alt="edit"></a>
+                            </div>
+                        </div>
+
+                        <div class="container-input">
+                            <label>Senha:</label>
+                            <div class="container__input-button" id="input-password">
+                                <input type="password">
+                                <a href="#"><img src="/images/icons/admin-edit_icon.svg" alt="edit"></a>
+                            </div>
+                        </div>
+                            
+                        <div class="container-input">
+                            <label>Confirme a senha:</label>
+                            <div class="container__input-button">
+                                <input type="password">
+                                <a href="#"><img src="/images/icons/admin-edit_icon.svg" alt="edit"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="container__dashboard__personal-info"> 
+                <div class="container__dashboard__personal-info--delivery">
+                    <h3>Dados de Entrega</h3>
+                    <div class="container__input-delivery">
+                        <div class="container-input container__input--CEP">
+                            <label>CEP:</label>
+                            <div class="container__input-button" id="input-cep">
+                                <input type="text">
+                                <a href="#"><img src="/images/icons/admin-edit_icon.svg" alt="edit"></a>
+                            </div>
+
+                            <label class="no-medium-screen">N°:</label>
+                            <div class="container__input-button container__input--Number">
+                                <label class="no-low-screen">N°:</label>
+                                <input type="number">
+                                <a href="#"><img src="/images/icons/admin-edit_icon.svg" alt="edit"></a>
+                            </div>
+                        </div>
+
+                        <div class="container-input" id="input-address">
+                            <label>Endereço:</label>
+                            <input class="input--no-button" type="text">
+                        </div>
+
+                        <div class="container-input container__input--localization">
+                            <label>Cidade:</label>
+                            <input class="input--no-button" type="text" id="input-city">
+
+                            <label class="label--localization">UF:</label>
+                            <input class="input--no-button" type="text" id="input-UF">
+                        </div>
+
+                        <div class="container-input">
+                            <label>Complemento:</label>
+                            <div class="container__input-button" id="input-complement">
+                                <input type="text">
+                                <a href="#"><img src="/images/icons/admin-edit_icon.svg" alt="edit"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container__dashboard__personal-info--register">
+                    <h3>Dados de Cadastro</h3>
+                    <div class="container__input-register">
+                        <div class="container-input">
+                            <label>Nome:</label>
+                            <div class="container__input-button">
+                                <input type="text">
+                                <a href="#"><img src="/images/icons/admin-edit_icon.svg" alt="edit"></a>
+                            </div>
+                        </div>
+
+                        <div class="container-input">
+                            <label>Sobrenome:</label>
+                            <div class="container__input-button">
+                                <input type="text">
+                                <a href="#"><img src="/images/icons/admin-edit_icon.svg" alt="edit"></a>
+                            </div>
+                        </div>
+
+                        <div class="container-input">
+                            <label>Nascimento:</label>
+                            <div class="container__input-button" id="input-birth">
+                                <input type="text">
+                                <a href="#"><img src="/images/icons/admin-edit_icon.svg" alt="edit"></a>
+                            </div>
+
+                            <label>CPF:</label>
+                            <div class="container__input-button">
+                                <input type="text">
+                                <a href="#"><img src="/images/icons/admin-edit_icon.svg" alt="edit"></a>
+                            </div>
+                        </div>
+
+                        <div class="container-input">
+                            <label>RG:</label>
+                            <div class="container__input-button">
+                                <input type="text">
+                                <a href="#"><img src="/images/icons/admin-edit_icon.svg" alt="edit"></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+     
+                <div class="container__button">
+                    <button type="submit" id="update-button">Atualizar</button>
+                </div>
+        </form>    
+        </section>
+    </main>
+</body>
