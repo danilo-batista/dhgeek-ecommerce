@@ -54,7 +54,11 @@ const userController = {
             if(user){
                 const passwordValid = bcrypt.compare(password, user.password);
                 if(passwordValid){
-                    const token = jwt.sign({id: user.id}, process.env.SECRET, {expiresIn: "24h"});
+                    const token = jwt.sign({
+                        id: user.id,
+                        email: user.email
+                    },
+                    process.env.SECRET, {expiresIn: "24h"});
                     res.cookie("token", token);
                     //return res.status(200).send({message:"Login feito com sucesso", token});
                     return res.redirect("/")
