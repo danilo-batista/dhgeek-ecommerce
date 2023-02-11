@@ -6,142 +6,142 @@ module.exports = {
       [
         {
           "id": 1,
-          "path": "/public/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.webp",
+          "path": "/public/images/products-categories/starwars/estatua-figura-the-child-na-cadeira-baby-yoda-mandalorian-image1.webp",
           "productId": 1
         },
         {
           "id": 2,
-          "path": "/public/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-image2-2x.webp",
+          "path": "/public/images/products-categories/starwars/estatua-figura-the-child-na-cadeira-baby-yoda-mandalorian-image2.webp",
           "productId": 1
         },
         {
           "id": 3,
-          "path": "/public/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-image3-2x.webp",
+          "path": "/public/images/products-categories/starwars/estatua-figura-the-child-na-cadeira-baby-yoda-mandalorian-image3.webp",
           "productId": 1
         },
         {
           "id": 4,
-          "path": "/public/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-image4-2x.webp",
+          "path": "/public/images/products-categories/starwars/estatua-figura-the-child-na-cadeira-baby-yoda-mandalorian-image4.webp",
           "productId": 1
         },
         {
           "id": 5,
-          "path": "/public/images/products-categories/starwars/livro-starwars-dark-edition.webp",
+          "path": "/public/images/products-categories/starwars/livro-starwars-dark-edition-image1.webp",
           "productId": 2
         },
         {
           "id": 6,
-          "path": "/public/images/products-categories/starwars/livro-starwars-dark-edition.webp",
+          "path": "/public/images/products-categories/starwars/livro-starwars-dark-edition-image2.webp",
           "productId": 2
         },
         {
           "id": 7,
-          "path": "/public/images/products-categories/starwars/livro-starwars-dark-edition.webp",
+          "path": "/public/images/products-categories/starwars/livro-starwars-dark-edition-image3.webp",
           "productId": 2
         },
         {
           "id": 8,
-          "path": "/public/images/products-categories/starwars/livro-starwars-dark-edition.webp",
+          "path": "/public/images/products-categories/starwars/livro-starwars-dark-edition-image4.webp",
           "productId": 2
         },
         {
           "id": 9,
-          "path": "/public/images/products-categories/starwars/funko-pop-296-stormtrooper-pride.webp",
+          "path": "/public/images/products-categories/starwars/funko-pop-pride-starwars-296-stormtrooper-image1.webp",
           "productId": 3
         },
         {
           "id": 10,
-          "path": "/public/images/products-categories/starwars/funko-pop-296-stormtrooper-pride.webp",
+          "path": "/public/images/products-categories/starwars/funko-pop-pride-starwars-296-stormtrooper-image2.webp",
           "productId": 3
         },
         {
           "id": 11,
-          "path": "/public/images/products-categories/starwars/funko-pop-296-stormtrooper-pride.webp",
+          "path": "/public/images/products-categories/starwars/funko-pop-pride-starwars-296-stormtrooper-image3.webp",
           "productId": 3
         },
         {
           "id": 12,
-          "path": "/public/images/products-categories/starwars/funko-pop-296-stormtrooper-pride.webp",
+          "path": "/public/images/products-categories/starwars/funko-pop-pride-starwars-296-stormtrooper-image4.webp",
           "productId": 3
         },
         {
           "id": 13,
-          "path": "/public/images/products-categories/starwars/funko-pop-456-darth-vader-edicao-especial.webp",
+          "path": "/public/images/products-categories/starwars/funko-pop-pride-starwars-456-darth-vader-retro-series-image1.webp",
           "productId": 4
         },
         {
           "id": 14,
-          "path": "/public/images/products-categories/starwars/funko-pop-456-darth-vader-edicao-especial.webp",
+          "path": "/public/images/products-categories/starwars/funko-pop-pride-starwars-456-darth-vader-retro-series-image2.webp",
           "productId": 4
         },
         {
           "id": 15,
-          "path": "/public/images/products-categories/starwars/funko-pop-456-darth-vader-edicao-especial.webp",
+          "path": "/public/images/products-categories/starwars/funko-pop-pride-starwars-456-darth-vader-retro-series-image3.webp",
           "productId": 4
         },
         {
           "id": 16,
-          "path": "/public/images/products-categories/starwars/funko-pop-456-darth-vader-edicao-especial.webp",
+          "path": "/public/images/products-categories/starwars/funko-pop-pride-starwars-456-darth-vader-retro-series-image4.webp",
           "productId": 4
         },
         {
           "id": 17,
-          "path": "/public/images/products-categories/starwars/pantufa-3d-chewbacca-sola-de-borracha.webp",
+          "path": "/public/images/products-categories/starwars/pantufa-3d-chewbacca-starwars-original-solado-de-borracha-image1.webp",
           "productId": 5
         },
         {
           "id": 18,
-          "path": "/public/images/products-categories/starwars/pantufa-3d-chewbacca-sola-de-borracha.webp",
+          "path": "/public/images/products-categories/starwars/pantufa-3d-chewbacca-starwars-original-solado-de-borracha-image2.webp",
           "productId": 5
         },
         {
           "id": 19,
-          "path": "/public/images/products-categories/starwars/pantufa-3d-chewbacca-sola-de-borracha.webp",
+          "path": "/public/images/products-categories/starwars/pantufa-3d-chewbacca-starwars-original-solado-de-borracha-image3.webp",
           "productId": 5
         },
         {
           "id": 20,
-          "path": "/public/images/products-categories/starwars/pantufa-3d-chewbacca-sola-de-borracha.webp",
+          "path": "/public/images/products-categories/starwars/pantufa-3d-chewbacca-starwars-original-solado-de-borracha-image4.webp",
           "productId": 5
         },
         {
           "id": 21,
-          "path": "/public/images/products-categories/starwars/lego-starwars-milleniun-falcon.webp",
+          "path": "/public/images/products-categories/starwars/lego-starwars-75295-microfighter-millennium-falcon-101-pcs-image1.webp",
           "productId": 6
         },
         {
           "id": 22,
-          "path": "/public/images/products-categories/starwars/lego-starwars-milleniun-falcon.webp",
+          "path": "/public/images/products-categories/starwars/lego-starwars-75295-microfighter-millennium-falcon-101-pcs-image2.webp",
           "productId": 6
         },
         {
           "id": 23,
-          "path": "/public/images/products-categories/starwars/lego-starwars-milleniun-falcon.webp",
+          "path": "/public/images/products-categories/starwars/lego-starwars-75295-microfighter-millennium-falcon-101-pcs-image3.webp",
           "productId": 6
         },
         {
           "id": 24,
-          "path": "/public/images/products-categories/starwars/lego-starwars-milleniun-falcon.webp",
+          "path": "/public/images/products-categories/starwars/lego-starwars-75295-microfighter-millennium-falcon-101-pcs-image4.webp",
           "productId": 6
         },
         {
           "id": 25,
-          "path": "/public/images/products-categories/starwars/starwars-40anos-low-e-zuckuss.webp",
+          "path": "/public/images/products-categories/starwars/starwars-edicao-de-40-anos-4lom-e-zuckuss-asbro-e9925-image1.webp",
           "productId": 7
         },
         {
           "id": 26,
-          "path": "/public/images/products-categories/starwars/starwars-40anos-low-e-zuckuss.webp",
+          "path": "/public/images/products-categories/starwars/starwars-edicao-de-40-anos-4lom-e-zuckuss-asbro-e9925-image2.webp",
           "productId": 7
         },
         {
           "id": 27,
-          "path": "/public/images/products-categories/starwars/starwars-40anos-low-e-zuckuss.webp",
+          "path": "/public/images/products-categories/starwars/starwars-edicao-de-40-anos-4lom-e-zuckuss-asbro-e9925-image3.webp",
           "productId": 7
         },
         {
           "id": 28,
-          "path": "/public/images/products-categories/starwars/starwars-40anos-low-e-zuckuss.webp",
+          "path": "/public/images/products-categories/starwars/starwars-edicao-de-40-anos-4lom-e-zuckuss-asbro-e9925-image4.webp",
           "productId": 7
         },
         {
@@ -206,102 +206,102 @@ module.exports = {
         },
         {
           "id": 41,
-          "path": "/public/images/products-categories/princess/quebra-cabeca-frozen-2oo-pecas-toyster-8033.webp",
+          "path": "/public/images/products-categories/princess/quebra-cabeca-disney-frozen-200-pecas-toyster-8033-image1.webp",
           "productId": 11
         },
         {
           "id": 42,
-          "path": "/public/images/products-categories/princess/quebra-cabeca-frozen-2oo-pecas-toyster-8033.webp",
+          "path": "/public/images/products-categories/princess/quebra-cabeca-disney-frozen-200-pecas-toyster-8033-image2.webp",
           "productId": 11
         },
         {
           "id": 43,
-          "path": "/public/images/products-categories/princess/quebra-cabeca-frozen-2oo-pecas-toyster-8033.webp",
+          "path": "/public/images/products-categories/princess/quebra-cabeca-disney-frozen-200-pecas-toyster-8033-image3.webp",
           "productId": 11
         },
         {
           "id": 44,
-          "path": "/public/images/products-categories/princess/quebra-cabeca-frozen-2oo-pecas-toyster-8033.webp",
+          "path": "/public/images/products-categories/princess/quebra-cabeca-disney-frozen-200-pecas-toyster-8033-image4.webp",
           "productId": 11
         },
         {
           "id": 45,
-          "path": "/public/images/products-categories/princess/boneca-princesas-mulan-basica.webp",
+          "path": "/public/images/products-categories/princess/boneca-princesa-disney-mulan-e8633-traje-guerreira-hasbro-image1.webp",
           "productId": 12
         },
         {
           "id": 46,
-          "path": "/public/images/products-categories/princess/boneca-princesas-mulan-basica.webp",
+          "path": "/public/images/products-categories/princess/boneca-princesa-disney-mulan-e8633-traje-guerreira-hasbro-image2.webp",
           "productId": 12
         },
         {
           "id": 47,
-          "path": "/public/images/products-categories/princess/boneca-princesas-mulan-basica.webp",
+          "path": "/public/images/products-categories/princess/boneca-princesa-disney-mulan-e8633-traje-guerreira-hasbro-image3.webp",
           "productId": 12
         },
         {
           "id": 48,
-          "path": "/public/images/products-categories/princess/boneca-princesas-mulan-basica.webp",
+          "path": "/public/images/products-categories/princess/boneca-princesa-disney-mulan-e8633-traje-guerreira-hasbro-image4.webp",
           "productId": 12
         },
         {
           "id": 49,
-          "path": "/public/images/products-categories/princess/chinelo-slim-feminino-aurora-havaianas.webp",
+          "path": "/public/images/products-categories/princess/chinelo-havaianas-slim-princesas-disney-feminina-image1.webp",
           "productId": 13
         },
         {
           "id": 50,
-          "path": "/public/images/products-categories/princess/chinelo-slim-feminino-aurora-havaianas.webp",
+          "path": "/public/images/products-categories/princess/chinelo-havaianas-slim-princesas-disney-feminina-image2.webp",
           "productId": 13
         },
         {
           "id": 51,
-          "path": "/public/images/products-categories/princess/chinelo-slim-feminino-aurora-havaianas.webp",
+          "path": "/public/images/products-categories/princess/chinelo-havaianas-slim-princesas-disney-feminina-image3.webp",
           "productId": 13
         },
         {
           "id": 52,
-          "path": "/public/images/products-categories/princess/chinelo-slim-feminino-aurora-havaianas.webp",
+          "path": "/public/images/products-categories/princess/chinelo-havaianas-slim-princesas-disney-feminina-image4.webp",
           "productId": 13
         },
         {
           "id": 53,
-          "path": "/public/images/products-categories/princess/bicicleta-aro-16-princesas-disney.webp",
+          "path": "/public/images/products-categories/princess/bicicleta-infantil-aro16-princesas-disney-nathor-image1.webp",
           "productId": 14
         },
         {
           "id": 54,
-          "path": "/public/images/products-categories/princess/bicicleta-aro-16-princesas-disney.webp",
+          "path": "/public/images/products-categories/princess/bicicleta-infantil-aro16-princesas-disney-nathor-image2.webp",
           "productId": 14
         },
         {
           "id": 55,
-          "path": "/public/images/products-categories/princess/bicicleta-aro-16-princesas-disney.webp",
+          "path": "/public/images/products-categories/princess/bicicleta-infantil-aro16-princesas-disney-nathor-image3.webp",
           "productId": 14
         },
         {
           "id": 56,
-          "path": "/public/images/products-categories/princess/bicicleta-aro-16-princesas-disney.webp",
+          "path": "/public/images/products-categories/princess/bicicleta-infantil-aro16-princesas-disney-nathor-image4.webp",
           "productId": 14
         },
         {
           "id": 57,
-          "path": "/public/images/products-categories/princess/lego-princesas-casa-da-aurora-bela-adormecida.webp",
+          "path": "/public/images/products-categories/princess/lego-princesas-43188-disney-casa-da-aurora-bela-adormecida-image1.webp",
           "productId": 15
         },
         {
           "id": 58,
-          "path": "/public/images/products-categories/princess/lego-princesas-casa-da-aurora-bela-adormecida.webp",
+          "path": "/public/images/products-categories/princess/lego-princesas-43188-disney-casa-da-aurora-bela-adormecida-image2.webp",
           "productId": 15
         },
         {
           "id": 59,
-          "path": "/public/images/products-categories/princess/lego-princesas-casa-da-aurora-bela-adormecida.webp",
+          "path": "/public/images/products-categories/princess/lego-princesas-43188-disney-casa-da-aurora-bela-adormecida-image3.webp",
           "productId": 15
         },
         {
           "id": 60,
-          "path": "/public/images/products-categories/princess/lego-princesas-casa-da-aurora-bela-adormecida.webp",
+          "path": "/public/images/products-categories/princess/lego-princesas-43188-disney-casa-da-aurora-bela-adormecida-image4.webp",
           "productId": 15
         },
         {
