@@ -47,6 +47,59 @@ const productController = {
         }
     },
 
+    getProductsByCategory: async (req, res) => {
+        const { category } = req.params;
+        try {
+            const productsList = await database.Product.findAll(
+                {
+                    where: {
+                        category: req.params.category
+                    },
+                    order: [['id', 'ASC']],
+                    include: [{
+                        model: database.ProductImages,
+                        as: 'productImages',
+                        required: true
+                    },
+                    {
+                        model: database.ProductPromotions,
+                        as: 'productPromotions',
+                        required: true
+                    }]
+                });
+            res.status(200).render('buscar-produto', { productData: productsList });
+
+        } catch (err) {
+            return res.status(500).send({ message: err.message });
+        }
+    },
+    getProductsByName: async (req, res) => {
+        const { name } = req.params;
+        try {
+            const productsList = await database.Product.findAll(name,
+                {
+                    where: {
+                        name: req.params.name
+                    },
+                    order: [['id', 'ASC']],
+                    include: [{
+                        model: database.ProductImages,
+                        as: 'productImages',
+                        required: true
+                    },
+                    {
+                        model: database.ProductPromotions,
+                        as: 'productPromotions',
+                        required: true
+                    }]
+                });
+            res.status(200).render('buscar-produto', { productData: productsList });
+
+        } catch (err) {
+            return res.status(500).send({ message: err.message });
+        }
+    },
+
     dashboardProduct: async (req, res) => {
         return res.render("dashboard/products")
     },
@@ -122,29 +175,6 @@ const productController = {
 
     },
 
-    getProductsByCategory: (req, res) => {
-        const { category } = req.params;
-        database.Product.findAll(
-            {
-                where: {
-                    category
-                },
-                order: [['id', 'ASC']],
-                include: [{
-                    model: database.ProductImages,
-                    as: 'productImages',
-                    required: true
-                },
-                {
-                    model: database.ProductPromotions,
-                    as: 'productPromotions',
-                    required: true
-                }]
-            }
-        ).then((data) => {
-            res.status(200).json(data);
-        });
-    }
 }
 
 module.exports = productController;

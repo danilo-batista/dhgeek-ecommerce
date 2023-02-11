@@ -7,6 +7,7 @@ const router = express.Router();
 
 router.get('/', Product.getProducts);
 router.get('/:id/:slug', Product.getProductById);
+router.get('/:category', Product.getProductsByCategory);
 
 router.get("/dashboard", validationToken, Product.dashboardProduct);
 router.post("/create", validationToken, upload.single("productionBanner"), Product.createProduct);
@@ -14,6 +15,6 @@ router.put("/update/:id", validationToken, Product.updateProduct);
 router.delete("/delete/:id", validationToken, Product.deleteProduct);
 
 /* em teste ainda */
-router.get('/todos/:category', Product.getProductsByCategory);
+router.get('/search', Product.getProductsByName);
 
 module.exports = router;
