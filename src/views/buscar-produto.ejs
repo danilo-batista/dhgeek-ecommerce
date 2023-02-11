@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/styles/base/reset.css" />
+    <link rel="stylesheet" href="/styles/base/normalize.css" />
+    <link rel="stylesheet" href="/styles/base/variables.css" />
+
+    <link rel="stylesheet" href="/styles/home.css">
+    <link rel="stylesheet" href="/styles/produto.css">
+    <link rel="stylesheet" href="/styles/partials/main-footer.css">
+
+    <title>
+        Todos os produtos | Disney Brasil
+    </title>
+</head>
+
+<body>
+    <div><%- include("./partials/header.ejs") %>
+            <main>
+                <div class="path">
+                    <a href="/">Home</a> > <a href="/produtos">Todos os produtos</a>
+                </div>
+                <div class="products__card__area">
+                    <% for (let product of productData){%>
+                        <div class="products-flex__item"
+                            onclick="location.href='/produtos/<%= product.id %>/<%= product.slug %>'"
+                            style="cursor: pointer;">
+
+                            <div class="products__card__item">
+                                <img src="/images/products-categories/<%= product.category.toLowerCase() %>/estatua-the-child-baby-yoda-mandalorian-2x.svg"
+                                    class="products__card__img" alt="<%= product.name %>">
+                                <div class="products__card__info">
+                                    <%= product.name %>
+                                        <p><span id="real">R$</span> 3.000,00</p>
+                                        <span>12x de R$ 250,00</span>
+                                </div>
+                            </div>
+
+                            <div class="products__card__item--768px">
+
+                            </div>
+                            <div class="products__card__item--768px">
+
+                            </div>
+                            <div class="products__card__item--1440px">
+
+                            </div>
+                            <div class="products__card__item--1440px">
+
+                            </div>
+                        </div>
+                        <% } %>
+                </div>
+
+                <%- include("./partials/main-footer") %>
+            </main>
+            <%- include("./partials/footer") %>
+                <%- include("./partials/copyright") %>
+</body>
+
+</html>
