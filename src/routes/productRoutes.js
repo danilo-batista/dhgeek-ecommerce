@@ -8,9 +8,11 @@ const router = express.Router();
 
 router.get('/exibir', Product.exibir);
 router.get("/dashboard", Product.dashboardProduct);
-router.post("/create", upload.single("productionBanner"), Product.createProduct);
-router.get("/delete/:id", Product.deleteProduct);
-router.put("/update/:id", Product.updateProduct);
 router.get("/:id", Product.getProductById);
+router.get("/dashboard/updateProduct/:id", Product.renderPageUpdate)
+router.put("/dashboard/updateProduct/:id", upload.single("productionBanner"), Product.updateProduct);
+router.post("/create", upload.single("productionBanner"), Product.createProduct);
+router.delete("/dashboard/updateProduct/:id", Product.deleteProduct);
+
 
 module.exports = router;

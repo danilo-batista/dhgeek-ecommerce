@@ -26,6 +26,21 @@ const productController = {
         return res.render("dashboard/products")
     },
 
+    renderPageUpdate: async (req,res)=>{
+        const {id} = req.params;
+        try {
+            const product = await database.Product.findOne({
+                where:{
+                    id
+                }
+            })
+                
+            return res.render("dashboard/updateProduct", {product});
+        } catch (err) {
+            return res.status(500).send({message:err.message});
+        }
+    },
+
     createProduct: async (req, res) =>{
         try {
             const product = await database.Product.create({
@@ -70,7 +85,8 @@ const productController = {
                 where: {
                     id: req.params.id
                 }
-            })
+            });
+            return res.redirect("/");
         } catch (err) {
             return res.status(500).send({message:err.message});
         }
@@ -78,14 +94,14 @@ const productController = {
 
     updateProduct: async (req,res) =>{
         try {
-            await db.User.update(
+            await database.Product.update(
             {
                 name: req.body.name,
                 slug: req.body.slug,
                 title: req.body.title,
                 category: req.body.category,
                 department: req.body.department,
-                productionBanner: req.file.filename,
+                productionBanner: req.file,
                 description: req.body.description,
                 manufacturer: req.body.manufacturer,
                 brand: req.body.brand,
@@ -102,6 +118,8 @@ const productController = {
                     id: req.params.id
                 }
             });
+
+            return res.redirect("/");
         } catch (err) {
             return res.status(500).send({message:err.message});
         }
