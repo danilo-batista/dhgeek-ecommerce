@@ -1,235 +1,246 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/styles/base/reset.css" />
-    <link rel="stylesheet" href="/styles/base/normalize.css" />
-    <link rel="stylesheet" href="/styles/base/variables.css" />
+  <link rel="stylesheet" href="/styles/base/reset.css" />
+  <link rel="stylesheet" href="/styles/base/normalize.css" />
+  <link rel="stylesheet" href="/styles/base/variables.css" />
 
-    <link rel="stylesheet" href="/styles/home.css">
-    <link rel="stylesheet" href="/styles/produto.css">
-    <link rel="stylesheet" href="/styles/partials/main-footer.css">
+  <link rel="stylesheet" href="/styles/home.css">
+  <link rel="stylesheet" href="/styles/produto.css">
+  <link rel="stylesheet" href="/styles/partials/main-footer.css">
 
-    <title>Produto | Disney Brasil</title>
-  </head>
-  <body>
-    <div><%- include("./partials/header.ejs") %>
-    <main>
-      <section class="hero">
-        <img class="hero--image" src="/images/banners/starwars/banner-starwars-image1-darthVader.jpg"
-          alt="Banner Darth Vader">
-      </section>
-      <div class="path">
-        <a href="/"> Home</a> > <a href="/produtos"> Todos os produtos</a> > <a
-          href="/produtos/todos/produto">
-        </a> Nome do Produto
-      </div>
-      <section class="item">
-        <div class="item__gallery">
-          <div class="item__gallery__main">
-            <img class="item__gallery__main--image" src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian.webp"
-              alt="Posição 1" />
-          </div>
-          <div class="item__gallery__mini">
-            <div class="item__gallery__mini-card">
-              <img class="item__gallery__mini-card--image" src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-image2-2x.webp"
-                alt="Posição 2" />
-            </div>
-            <div class="item__gallery__mini-card">
-              <img class="item__gallery__mini-card--image" src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-image3-2x.webp"
-                alt="Posição 3" />
-            </div>
-            <div class="item__gallery__mini-card">
-              <img class="item__gallery__mini-card--image" src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-image4-2x.webp"
-                alt="Posição 4" />
-            </div>
-          </div>
+  <title>
+    <%= productData.title %> | Disney Brasil
+  </title>
+</head>
+
+<body>
+  <div><%- include("./partials/header.ejs") %>
+      <main>
+        <section class="hero">
+          <img class="hero--image" src="/images/banners/starwars/banner-starwars-image1-darthVader.jpg"
+            alt="Banner Darth Vader">
+        </section>
+        <div class="path">
+          <a href="/"> Home</a> > <a href="/produtos"> Todos os produtos</a> > <a href="/produtos/todos/produto">
+          </a> Nome do Produto
         </div>
-        <div class="item__data">
-          <p class="item__data__name">
-            Estátua Figura The Child Na Cadeira Baby Yoda Mandalorian
-          <div class="item__data__pricing">
-            </p>
-            <p class="item__data--off">
-              35% OFF
-            </p>
-            <div class="item__data__pricing-box">
-              <p class="item__data--old-price">
-                R$ 10.000,00
+        <section class="item">
+          <div class="item__gallery">
+            <div class="item__gallery__main">
+              <img class="item__gallery__main--image"
+                src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian.webp"
+                alt="Posição 1" />
+            </div>
+            <div class="item__gallery__mini">
+              <div class="item__gallery__mini-card">
+                <img class="item__gallery__mini-card--image"
+                  src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-image2-2x.webp"
+                  alt="Posição 2" />
+              </div>
+              <div class="item__gallery__mini-card">
+                <img class="item__gallery__mini-card--image"
+                  src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-image3-2x.webp"
+                  alt="Posição 3" />
+              </div>
+              <div class="item__gallery__mini-card">
+                <img class="item__gallery__mini-card--image"
+                  src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-image4-2x.webp"
+                  alt="Posição 4" />
+              </div>
+            </div>
+          </div>
+          <div class="item__data">
+            <p class="item__data__name">
+              Estátua Figura The Child Na Cadeira Baby Yoda Mandalorian
+            <div class="item__data__pricing">
               </p>
-              <p class="item__data--price">
-                R$ 3.000,00
+              <p class="item__data--off">
+                35% OFF
+              </p>
+              <div class="item__data__pricing-box">
+                <p class="item__data--old-price">
+                  R$ 10.000,00
+                </p>
+                <p class="item__data--price">
+                  R$ 3.000,00
+                </p>
+              </div>
+            </div>
+            <div class="item__data__buying">
+              <div class="item__buying__buttons">
+                <input type="button" class="item__buying--cart-button" id="cartButton" value="Adicionar ao carrinho" />
+                <input type="button" class="item__buying--buy-button" id="buyButton" value="Comprar agora" />
+              </div>
+              <p class="item__buying--suggestion">
+                Pague com KOIN em 3x sem juros no boleto!
               </p>
             </div>
           </div>
-          <div class="item__data__buying">
-            <div class="item__buying__buttons">
-              <input type="button" class="item__buying--cart-button" id="cartButton"
-                value="Adicionar ao carrinho" />
-              <input type="button" class="item__buying--buy-button" id="buyButton"
-                value="Comprar agora" />
-            </div>
-            <p class="item__buying--suggestion">
-              Pague com KOIN em 3x sem juros no boleto!
-            </p>
-          </div>
-        </div>
-      </section>
-      <section class="products">
-        <div class="products__banner__title">
-          <div class="products__banner__buttons">
+        </section>
+        <section class="products">
+          <div class="products__banner__title">
+            <div class="products__banner__buttons">
               <a href="#"><img src="/images/icons/ver-mais-produtos.svg" alt="ver-mais-produtos"></a>
               <a href="#" class="products__banner__buttons--see-more">Veja mais produtos
-                  <span>StarWars</span>
+                <span>StarWars</span>
               </a>
               <a href="#"><img src="/images/icons/ir-para-topo.svg" alt="ir-para-topo"></a>
               <a href="#" class="products__banner__buttons--go-top">Ir para o topo</a>
+            </div>
           </div>
-        </div>
-        <div class="products__card">
-          <div>
+          <div class="products__card">
+            <div>
               <a href="#" id="back-button"><img src="/images/icons/left-arrow.svg" alt="back-button"></a>
               <a href="#" id="next-button"><img src="/images/icons/right-arrow.svg" alt="next-button"></a>
-          </div>
-          <div class="products__card__area">
+            </div>
+            <div class="products__card__area">
               <div class="products__card__item">
-                  <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-                      class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-                  <div class="products__card__info">
-                      <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-                      <p><span id="real">R$</span> 3.000,00</p>
-                      <span>12x de R$ 250,00</span>
-                  </div>
+                <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
+                  class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
+                <div class="products__card__info">
+                  <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
+                  <p><span id="real">R$</span> 3.000,00</p>
+                  <span>12x de R$ 250,00</span>
+                </div>
               </div>
               <div class="products__card__item--768px">
-                  <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-                      class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-                  <div class="products__card__info">
-                      <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-                      <p><span id="real">R$</span> 3.000,00</p>
-                      <span>12x de R$ 250,00</span>
-                  </div>
+                <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
+                  class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
+                <div class="products__card__info">
+                  <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
+                  <p><span id="real">R$</span> 3.000,00</p>
+                  <span>12x de R$ 250,00</span>
+                </div>
               </div>
               <div class="products__card__item--768px">
-                  <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-                      class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-                  <div class="products__card__info">
-                      <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-                      <p><span id="real">R$</span> 3.000,00</p>
-                      <span>12x de R$ 250,00</span>
-                  </div>
+                <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
+                  class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
+                <div class="products__card__info">
+                  <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
+                  <p><span id="real">R$</span> 3.000,00</p>
+                  <span>12x de R$ 250,00</span>
+                </div>
               </div>
               <div class="products__card__item--1440px">
-                  <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-                      class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-                  <div class="products__card__info">
-                      <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-                      <p><span id="real">R$</span> 3.000,00</p>
-                      <span>12x de R$ 250,00</span>
-                  </div>
+                <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
+                  class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
+                <div class="products__card__info">
+                  <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
+                  <p><span id="real">R$</span> 3.000,00</p>
+                  <span>12x de R$ 250,00</span>
+                </div>
               </div>
               <div class="products__card__item--1440px">
-                  <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-                      class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-                  <div class="products__card__info">
-                      <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-                      <p><span id="real">R$</span> 3.000,00</p>
-                      <span>12x de R$ 250,00</span>
-                  </div>
+                <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
+                  class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
+                <div class="products__card__info">
+                  <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
+                  <p><span id="real">R$</span> 3.000,00</p>
+                  <span>12x de R$ 250,00</span>
+                </div>
               </div>
+            </div>
           </div>
-        </div>
-      </section>
-      <article class="description">
-        <p class="description__title">
-          Descrição
-        </p>
-        <p class="description__text">
-          Prepare-se para o hiperespaço! A estrela emergente de The Mandalorian no Disney Plus é definitivamente a Criança, e ela merece sua honra nesta nova estátua em escala 1/2! Sentado no banco do passageiro do Razor Crest, segurando seu botão de controle de prata favorito em sua mão, o Child será o complemento perfeito para a coleção de qualquer fã do Mandalorian. Medindo aproximadamente 30 centímetros de altura, ele vem embalado em uma caixa de janela colorida e inclui um certificado de autenticidade numerado. Desenhado por Joe Allard e esculpido por Jorge Santos Souza. Imagem meramente ilustrativa.
-        </p><br>
-        <p class="description__text">
-          <strong>Fabricante</strong>: Diamond Select<br>
+        </section>
+        <article class="description">
+          <p class="description__title">
+            Descrição
+          </p>
+          <p class="description__text">
+            Prepare-se para o hiperespaço! A estrela emergente de The Mandalorian no Disney Plus é definitivamente a
+            Criança, e ela merece sua honra nesta nova estátua em escala 1/2! Sentado no banco do passageiro do Razor
+            Crest, segurando seu botão de controle de prata favorito em sua mão, o Child será o complemento perfeito
+            para a coleção de qualquer fã do Mandalorian. Medindo aproximadamente 30 centímetros de altura, ele vem
+            embalado em uma caixa de janela colorida e inclui um certificado de autenticidade numerado. Desenhado por
+            Joe Allard e esculpido por Jorge Santos Souza. Imagem meramente ilustrativa.
+          </p><br>
+          <p class="description__text">
+            <strong>Fabricante</strong>: Diamond Select<br>
             <strong>Série</strong>: Star Wars<br>
-              <strong>Personagem</strong>: The Child In Chair (Baby Yoda)<br>
-                <strong>Material base</strong>: Resina<br>
-                  <strong>Possui articulação</strong>: Não<br>
-                    <strong>Peso<small>(kg)</small></strong>: 5,62 kg<br>
-                      <strong>Largura<small>(cm)</small></strong>: 25 cm<br>
-                        <strong>Altura<small>(cm)</small></strong>: 37 cm<br>
-                          <strong>Profundidade<small>(cm)</small></strong>: 24,5 cm<br>
-        </p>
-      </article>
-      <section class="products">
-        <div class="products__banner__title">
-          <div class="products__banner__buttons">
+            <strong>Personagem</strong>: The Child In Chair (Baby Yoda)<br>
+            <strong>Material base</strong>: Resina<br>
+            <strong>Possui articulação</strong>: Não<br>
+            <strong>Peso<small>(kg)</small></strong>: 5,62 kg<br>
+            <strong>Largura<small>(cm)</small></strong>: 25 cm<br>
+            <strong>Altura<small>(cm)</small></strong>: 37 cm<br>
+            <strong>Profundidade<small>(cm)</small></strong>: 24,5 cm<br>
+          </p>
+        </article>
+        <section class="products">
+          <div class="products__banner__title">
+            <div class="products__banner__buttons">
               <a href="#"><img src="/images/icons/ver-mais-produtos.svg" alt="ver-mais-produtos"></a>
               <a href="#" class="products__banner__buttons--see-more">Veja mais produtos
-                  <span>StarWars</span>
+                <span>StarWars</span>
               </a>
               <a href="#"><img src="/images/icons/ir-para-topo.svg" alt="ir-para-topo"></a>
               <a href="#" class="products__banner__buttons--go-top">Ir para o topo</a>
+            </div>
           </div>
-        </div>
-        <div class="products__card">
-          <div>
+          <div class="products__card">
+            <div>
               <a href="#" id="back-button"><img src="/images/icons/left-arrow.svg" alt="back-button"></a>
               <a href="#" id="next-button"><img src="/images/icons/right-arrow.svg" alt="next-button"></a>
-          </div>
-          <div class="products__card__area">
+            </div>
+            <div class="products__card__area">
               <div class="products__card__item">
-                  <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-                      class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-                  <div class="products__card__info">
-                      <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-                      <p><span id="real">R$</span> 3.000,00</p>
-                      <span>12x de R$ 250,00</span>
-                  </div>
+                <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
+                  class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
+                <div class="products__card__info">
+                  <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
+                  <p><span id="real">R$</span> 3.000,00</p>
+                  <span>12x de R$ 250,00</span>
+                </div>
               </div>
               <div class="products__card__item--768px">
-                  <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-                      class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-                  <div class="products__card__info">
-                      <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-                      <p><span id="real">R$</span> 3.000,00</p>
-                      <span>12x de R$ 250,00</span>
-                  </div>
+                <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
+                  class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
+                <div class="products__card__info">
+                  <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
+                  <p><span id="real">R$</span> 3.000,00</p>
+                  <span>12x de R$ 250,00</span>
+                </div>
               </div>
               <div class="products__card__item--768px">
-                  <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-                      class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-                  <div class="products__card__info">
-                      <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-                      <p><span id="real">R$</span> 3.000,00</p>
-                      <span>12x de R$ 250,00</span>
-                  </div>
+                <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
+                  class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
+                <div class="products__card__info">
+                  <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
+                  <p><span id="real">R$</span> 3.000,00</p>
+                  <span>12x de R$ 250,00</span>
+                </div>
               </div>
               <div class="products__card__item--1440px">
-                  <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-                      class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-                  <div class="products__card__info">
-                      <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-                      <p><span id="real">R$</span> 3.000,00</p>
-                      <span>12x de R$ 250,00</span>
-                  </div>
+                <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
+                  class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
+                <div class="products__card__info">
+                  <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
+                  <p><span id="real">R$</span> 3.000,00</p>
+                  <span>12x de R$ 250,00</span>
+                </div>
               </div>
               <div class="products__card__item--1440px">
-                  <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-                      class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-                  <div class="products__card__info">
-                      <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-                      <p><span id="real">R$</span> 3.000,00</p>
-                      <span>12x de R$ 250,00</span>
-                  </div>
+                <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
+                  class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
+                <div class="products__card__info">
+                  <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
+                  <p><span id="real">R$</span> 3.000,00</p>
+                  <span>12x de R$ 250,00</span>
+                </div>
               </div>
+            </div>
           </div>
-        </div>
-      </section>
-      <%- include("./partials/main-footer") %>
-    </main>
-    <%- include("./partials/footer") %>
-    <%- include("./partials/copyright") %>
-  </body>
+        </section>
+        <%- include("./partials/main-footer") %>
+      </main>
+      <%- include("./partials/footer") %>
+        <%- include("./partials/copyright") %>
+</body>
+
 </html>

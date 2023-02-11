@@ -16,12 +16,29 @@ const productController = {
                     required: true
                 }]
             }
-        ).then((data) => { res.json(data); });
+        ).then((data) => {
+            res.status(200).render('buscar-produto', { productData: data });
+        });
     },
-
-    exibir: (req, res) => {
-        res.render('../views/produto');
+    getSpecificProduct: (req, res) => {
+        const { id } = req.params;
+        database.Product.findByPk(id,
+            {
+                include: [{
+                    model: database.ProductImages,
+                    as: 'productImages',
+                    required: true,
+                },
+                {
+                    model: database.ProductPromotions,
+                    as: 'productPromotions',
+                    required: true
+                }]
+            }
+        ).then((data) => {
+            res.status(200).render('produto', { productData: data });
+        });
     },
-};
+}
 
 module.exports = productController;
