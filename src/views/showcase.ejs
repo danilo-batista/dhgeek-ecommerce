@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/styles/base/reset.css" />
+    <link rel="stylesheet" href="/styles/base/normalize.css" />
+    <link rel="stylesheet" href="/styles/base/variables.css" />
+
+    <link rel="stylesheet" href="/styles/home.css">
+    <link rel="stylesheet" href="/styles/produto.css">
+    <link rel="stylesheet" href="/styles/partials/main-footer.css">
+    <link rel="stylesheet" href="/styles/item.css" />
+
+    <title>
+        Todos os produtos | Disney Brasil
+    </title>
+</head>
+
+<body>
+    <div>
+        <%- include("./partials/header.ejs") %>
+    </div>
+
+    <main>
+        <section class="item">
+            <article class="showcase__products__container products-flex">
+                <% for (let product of productData) { %>
+                    <div class="products-flex__item "
+                        onclick="location.href='/produtos/<%= product.id %>/<%= product.slug %>'"
+                        style="cursor: pointer;">
+                        <div class="products-flex__item__rectangle">
+                            <img class="products-flex__image" src="<%= product.path %>" alt="<%= product.name %>" />
+
+                        </div>
+                        <a class="products__link--styled" href="#">
+                            <%= product.name %>
+                        </a>
+                        <% for (let productPrice of product.productPromotions) { %>
+                            <p class="products__price--styled ">
+                                <span id="real">R$</span>
+                                <%= productPrice.promotionalPrice %>
+                            </p>
+                            <p class="products__price_conditions--styled">
+                                <small>
+                                    <%= productPrice.paymentsConditions %>x | R$ <%= productPrice.paymentsValues %>
+                                </small>
+                            </p>
+                            <% } %>
+                    </div>
+                    <% } %>
+            </article>
+        </section>
+    </main>
+
+    <%- include("./partials/main-footer") %>
+        <%- include("./partials/footer") %>
+            <%- include("./partials/copyright") %>
+</body>
+
+</html>

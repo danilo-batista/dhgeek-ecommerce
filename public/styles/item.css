@@ -1,0 +1,193 @@
+.products {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    font-family: 'Raleway', sans-serif;
+    width: 100vw;
+}
+
+/* ---------- mobile first ---------- */
+
+.products__header {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    width: 95vw;
+}
+
+.products__header__title {
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0.2rem;
+    color: var(--disney-darkgray);
+}
+
+.products__ver-mais-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    gap: 10;
+}
+
+.products__ver-mais-container__link--styled {
+    color: var(--disney-mediumgray);
+    font-weight: 700;
+    text-decoration: inherit;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.products__ver-mais-container__link--styled:hover {
+    border-bottom: 2px solid var(--disney-mediumgray);
+}
+
+.products__ver-mais-container__arrow {
+    margin-left: 0.6rem;
+    width: 1rem;
+    height: 1rem;
+}
+
+.products-flex {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+}
+
+.products-flex__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 9rem;
+    height: 18rem;
+    background-color: var(--disney-lightgray);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.products-flex__item:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    top: -4px;
+    border: 1px solid var(--disney-lightgray);
+    background-color: var(--disney-white);
+}
+
+.products-flex__item--600w {
+    display: none;
+}
+
+.products-flex__item--900w {
+    display: none;
+}
+
+.products-flex__item__rectangle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--disney-white);
+    width: 7rem;
+    height: 7rem;
+    margin-top: 1rem;
+}
+
+.products-flex__image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    align-self: center;
+}
+
+.products__link--styled {
+    color: var(--disney-lightgray);
+    font-weight: 500;
+    text-decoration: inherit;
+    color: var(--disney-darkgray);
+    padding: 0.6rem;
+    text-align: left;
+    cursor: pointer;
+}
+
+.products__price--styled {
+    margin: 0;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    color: var(--disney-darkgray);
+    text-align: left;
+}
+
+.products__price_conditions--styled {
+    color: var(--disney-mediumgray);
+    text-align: left;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- 600px ---------- */
+
+@media (min-width: 600px) {
+    .products-flex__item--600w {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 9rem;
+        height: 18rem;
+        background-color: var(--disney-lightgray);
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .products-flex__item--600w:hover {
+        transition: all 0.2s ease-out;
+        box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+        top: -4px;
+        border: 1px solid var(--disney-lightgray);
+        background-color: var(--disney-white);
+    }
+}
+
+/* ---------- 900px ---------- */
+
+@media (min-width: 900px) {
+    .products-flex__item--900w {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 9rem;
+        height: 18rem;
+        background-color: var(--disney-lightgray);
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .products-flex__item--900w:hover {
+        transition: all 0.2s ease-out;
+        box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+        top: -4px;
+        border: 1px solid var(--disney-lightgray);
+        background-color: var(--disney-white);
+    }
+}
+
+/* ---------- 100px ---------- */
+
+@media (min-width: 1048px) {
+    .products__header {
+        display: flex;
+        justify-content: center;
+        gap: 43rem;
+    }
+
+    .products-flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 2rem;
+        gap: 15px;
+    }
+}

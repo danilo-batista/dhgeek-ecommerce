@@ -20,7 +20,8 @@
 </head>
 
 <body>
-  <div><%- include("./partials/header.ejs") %>
+  <div>
+    <%- include("./partials/header.ejs") %>
       <main>
         <section class="hero">
           <img class="hero--image" src="<%= productData.productionBanner %>"
@@ -95,11 +96,13 @@
         <a href="#" class="products__banner__buttons--go-top">Ir para o topo</a>
       </div>
     </div>
+
     <div class="products__card">
       <div>
         <a href="#" id="back-button"><img src="/images/icons/left-arrow.svg" alt="back-button"></a>
         <a href="#" id="next-button"><img src="/images/icons/right-arrow.svg" alt="next-button"></a>
       </div>
+
       <div class="products__card__area">
         <div class="products__card__item">
           <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"

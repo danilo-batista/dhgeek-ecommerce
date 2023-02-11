@@ -17,8 +17,8 @@ const productController = {
                         required: true
                     }]
                 });
-            res.status(200).render('buscar-produto', { productData: productsList });
-
+            // res.status(200).render('buscar-produto', { productData: productsList });
+            res.status(200).render('showcase', { productData: productsList });
         } catch (err) {
             return res.status(500).send({ message: err.message });
         }
@@ -76,7 +76,7 @@ const productController = {
     getProductsByName: async (req, res) => {
         const { name } = req.params;
         try {
-            const productsList = await database.Product.findAll(name,
+            const productsList = await database.Product.findAll(
                 {
                     where: {
                         name: req.params.name
@@ -174,7 +174,6 @@ const productController = {
         }
 
     },
-
 }
 
 module.exports = productController;
