@@ -1,25 +1,113 @@
 const database = require('../models/index');
 
 const productController = {
-    getProducts: (req, res) => {
-        database.Product.findAll(
-            {
-                order: [['id', 'ASC']],
-                include: [{
-                    model: database.ProductImages,
-                    as: 'productImages',
-                    required: true
-                },
+    getProducts: async (req, res) => {
+        try {
+            const productsList = await database.Product.findAll(
                 {
-                    model: database.ProductPromotions,
-                    as: 'productPromotions',
-                    required: true
-                }]
-            }
-        ).then((data) => {
-            // res.status(200).json(data);
-            res.status(200).render('buscar-produto', { productData: data });
-        });
+                    order: [['id', 'ASC']],
+                    include: [{
+                        model: database.ProductImages,
+                        as: 'productImages',
+                        required: true
+                    },
+                    {
+                        model: database.ProductPromotions,
+                        as: 'productPromotions',
+                        required: true
+                    }]
+                });
+                            res.status(200).render('buscar-produto', { productData: data });
+
+        } catch (err) {
+            return res.status(500).send({message:err.message});
+        }
+    },
+
+    dashboardProduct: async (req,res) => {
+        return res.render("dashboard/products")
+    },
+
+    createProduct: async (req, res) =>{
+        try {
+            const product = await database.Product.create({
+                name: req.body.name,
+                slug: req.body.slug,
+                title: req.body.title,
+                category: req.body.category,
+                department: req.body.department,
+                productionBanner: req.file.filename,
+                description: req.body.description,
+                manufacturer: req.body.manufacturer,
+                brand: req.body.brand,
+                character: req.body.character,
+                material: req.body.material,
+                weight: req.body.weight,
+                height: req.body.height,
+                width: req.body.width,
+                depth: req.body.depth,
+                fullPrice: req.body.fullPrice
+            });
+
+            return res.send(product)
+        } catch (err) {
+            return res.status(500).send({message:err.message});
+        }
+    },
+
+    getProductById: async (req,res) => {
+        const { id } = req.params;
+        try {
+                const product = await database.Product.findByPk(id);
+                return res.send(product)
+        
+        } catch (err) {
+            return res.status(500).send({message:err.message});
+        }
+    },
+
+    deleteProduct: async (req,res) =>{
+        try {
+            await database.Product.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+        } catch (err) {
+            return res.status(500).send({message:err.message});
+        }
+    },
+
+    updateProduct: async (req,res) =>{
+        try {
+            await db.User.update(
+            {
+                name: req.body.name,
+                slug: req.body.slug,
+                title: req.body.title,
+                category: req.body.category,
+                department: req.body.department,
+                productionBanner: req.file.filename,
+                description: req.body.description,
+                manufacturer: req.body.manufacturer,
+                brand: req.body.brand,
+                character: req.body.character,
+                material: req.body.material,
+                weight: req.body.weight,
+                height: req.body.height,
+                width: req.body.width,
+                depth: req.body.depth,
+                fullPrice: req.body.fullPrice
+            },
+            {
+                where:{
+                    id: req.params.id
+                }
+            });
+        } catch (err) {
+            return res.status(500).send({message:err.message});
+        }
+
     },
     getSpecificProduct: (req, res) => {
         const { id } = req.params;

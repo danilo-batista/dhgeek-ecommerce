@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/styles/base/reset.css" />
+    <link rel="stylesheet" href="/styles/base/normalize.css" />
+    <link rel="stylesheet" href="/styles/base/variables.css" />
+
+
+    <link rel="stylesheet" href="/styles/dashboard-products.css">
+
+    <title>Dashboard Produtos</title>
+</head>
+<body>
+    <%- include("../partials/header") %>
+
+    <main>
+        <section class="container__dashboard">
+           <form action="/produto/create" method="post" enctype="multipart/form-data">
+                <h3>Cadastro de Produto</h3>
+
+                <div class="container__dashboard-form">
+                <div class="container__dashboard-input">
+                    <label for="name">Nome:</label>
+                    <input type="text" name="name">
+                </div>
+
+                <div class="container__dashboard-input">
+                    <label for="slug">Slug:</label>
+                    <input type="text" name="slug">
+                </div>
+
+                <div class="container__dashboard-input">
+                    <label for="title">Título:</label>
+                    <input type="text" name="title">
+                </div>
+
+                
+                <div class="container__dashboard-input">
+                    <label for="category">Categoria:</label>
+                    <input type="text" name="category">
+                </div>
+
+                <div class="container__dashboard-input">
+                    <label for="department">Departamento:</label>
+                    <input type="text" name="department">
+                </div>
+
+                <div class="container__dashboard-input input-banner">
+                    <label for="productionBanner">Banner produto</label>
+                    <input type="file" name="productionBanner" id="productionBanner">
+                </div>
+
+                <div class="container__dashboard-input">
+                    <label for="description">Descrição:</label>
+                    <input type="text" name="description">
+                </div>
+
+                <div class="container__dashboard-input">
+                    <label for="manufacturer">Fabricante:</label>
+                    <input type="text" name="manufacturer">
+                </div>
+
+                <div class="container__dashboard-input">
+                    <label for="brand">Marca:</label>
+                    <input type="text" name="brand">
+                </div>
+
+                <div class="container__dashboard-input">
+                    <label for="character">Personagem:</label>
+                    <input type="text" name="character">
+                </div>
+
+                <div class="container__dashboard-input">
+                    <label for="material">Material:</label>
+                    <input type="text" name="material">
+                </div>
+
+                <div class="container__dashboard-input">
+                    <label for="weight">Peso:</label>
+                    <input type="text" name="weight">
+                </div>
+
+                <div class="container__dashboard-input">
+                    <label for="height">Altura:</label>
+                    <input type="text" name="height">
+                </div>
+
+                <div class="container__dashboard-input">
+                    <label for="width">Largura:</label>
+                    <input type="text" name="width">
+                </div>
+
+                
+                <div class="container__dashboard-input">
+                    <label for="depth">Profundidade:</label>
+                    <input type="text" name="depth">
+                </div>
+
+                <div class="container__dashboard-input">
+                    <label for="fullPrice">Preço cheio:</label>
+                    <input type="text" name="fullPrice">
+                </div>
+                </div>
+
+                <button type="submit">Cadastrar</button>
+           </form>
+        </section>
+    </main>
+
+    <%- include("../partials/copyright") %>
+</body>
