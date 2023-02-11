@@ -34,53 +34,59 @@
           </a> > <%= productData.name %>
         </div>
         <section class="item">
-          <% for (let productImages of productData.productImages){ %>
-            <div class="item__gallery">
-              <div class="item__gallery__main">
-                <img class="item__gallery__main--image" src="<%= productImages.path %>" alt="Posição 1" />
+          <div class="item__gallery">
+            <div class="item__gallery__main">
+              <img class="item__gallery__main--image"
+                src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
+                alt="Posição 1" />
+            </div>
+            <div class="item__gallery__mini">
+              <div class="item__gallery__mini-card">
+                <img class="item__gallery__mini-card--image"
+                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image2.webp"
+                  alt="Posição 2" />
               </div>
-              <div class="item__gallery__mini">
-                <div class="item__gallery__mini-card">
-                  <img class="item__gallery__mini-card--image" src="<%= productImages.path %>" alt="Posição 2" />
-                </div>
-                <div class="item__gallery__mini-card">
-                  <img class="item__gallery__mini-card--image" src="<%= productImages.path %>" alt="Posição 3" />
-                </div>
-                <div class="item__gallery__mini-card">
-                  <img class="item__gallery__mini-card--image" src="<%= productImages.path %>" alt="Posição 4" />
-                </div>
+              <div class="item__gallery__mini-card">
+                <img class="item__gallery__mini-card--image"
+                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image3.webp"
+                  alt="Posição 3" />
+              </div>
+              <div class="item__gallery__mini-card">
+                <img class="item__gallery__mini-card--image"
+                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image4.webp"
+                  alt="Posição 4" />
+              </div>
+            </div>
+          </div>
+          <% for (let productPrice of productData.productPromotions) { %>
+            <div class="item__data">
+              <p class="item__data__name">
+                <%= productData.name %>
+                  <div class="item__data__pricing">
+              </p>
+              <p class="item__data--off">
+                <%= productPrice.discount %>% OFF
+              </p>
+              <div class="item__data__pricing-box">
+                <p class="item__data--old-price">
+                  R$ <%= productData.fullPrice %>
+                </p>
+                <p class="item__data--price">
+                  R$ <%= productPrice.promotionalPrice %>
+                </p>
               </div>
             </div>
             <% } %>
-              <% for (let productPrice of productData.productPromotions) { %>
-                <div class="item__data">
-                  <p class="item__data__name">
-                    <%= productData.name %>
-                      <div class="item__data__pricing">
-                  </p>
-                  <p class="item__data--off">
-                    <%= productPrice.discount %>% OFF
-                  </p>
-                  <div class="item__data__pricing-box">
-                    <p class="item__data--old-price">
-                      R$ <%= productData.fullPrice %>
-                    </p>
-                    <p class="item__data--price">
-                      R$ <%= productPrice.promotionalPrice %>
-                    </p>
-                  </div>
+              <div class="item__data__buying">
+                <div class="item__buying__buttons">
+                  <input type="button" class="item__buying--cart-button" id="cartButton"
+                    value="Adicionar ao carrinho" />
+                  <input type="button" class="item__buying--buy-button" id="buyButton" value="Comprar agora" />
                 </div>
-                <% } %>
-                  <div class="item__data__buying">
-                    <div class="item__buying__buttons">
-                      <input type="button" class="item__buying--cart-button" id="cartButton"
-                        value="Adicionar ao carrinho" />
-                      <input type="button" class="item__buying--buy-button" id="buyButton" value="Comprar agora" />
-                    </div>
-                    <p class="item__buying--suggestion">
-                      Pague com KOIN em 3x sem juros no boleto!
-                    </p>
-                  </div>
+                <p class="item__buying--suggestion">
+                  Pague com KOIN em 3x sem juros no boleto!
+                </p>
+              </div>
   </div>
   </section>
   <section class="products">

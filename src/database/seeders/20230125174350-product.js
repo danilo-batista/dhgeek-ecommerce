@@ -102,7 +102,7 @@ module.exports = {
         {
           "id": 6,
           "name": "Lego Star Wars 75295 - Microfighter Millennium Falcon - 101 pçs",
-          "slug": "lego-starwars-75295-microfighter-millennium-falcon-101-pçs",
+          "slug": "lego-starwars-75295-microfighter-millennium-falcon-101-pcs",
           "title": "Lego Millennium Falcon 101 pçs",
           "category": "StarWars",
           "department": "Decoração",
@@ -196,12 +196,12 @@ module.exports = {
         },
         {
           "id": 11,
+          "name": "Quebra-cabeça Disney Frozen 200 peças - Toyster 8033",
           "slug": "quebra-cabeca-disney-frozen-200-pecas-toyster-8033",
           "title": "Quebra-cabeça Frozen 200 pçs",
           "department": "Jogos de tabuleiro e cartas",
           "category": "Princesas",
           "productionBanner": "/images/banners/princess/banner-princess-image1-princess.jpg",
-          "name": "Quebra-cabeça Disney Frozen 200 peças - Toyster 8033",
           "description": ".",
           "manufacturer": "Toyster",
           "brand": "Princess",
@@ -367,7 +367,7 @@ module.exports = {
         },
         {
           "id": 20,
-          "name": "Lego Marvel Os Eternos Emboscada Deviante 76154 - 197 pçs",
+          "name": "Lego Marvel Os Eternos Emboscada Deviante 76154 - 197 pcs",
           "slug": "lego-marvel-os-eternos-emboscada-deviante-76154-197pcs",
           "title": "Lego Os Eternos Emboscada Deviante 197 pçs",
           "category": "Marvel",

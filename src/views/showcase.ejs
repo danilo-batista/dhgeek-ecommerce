@@ -33,7 +33,9 @@
                         onclick="location.href='/produtos/<%= product.id %>/<%= product.slug %>'"
                         style="cursor: pointer;">
                         <div class="products-flex__item__rectangle">
-                            <img class="products-flex__image" src="<%= product.path %>" alt="<%= product.name %>" />
+                            <img class="products-flex__image"
+                                src="/images/products-categories/<%= product.category %>/<%= product.slug %>-image1.webp"
+                                alt="<%= product.name %>" />
 
                         </div>
                         <a class="products__link--styled" href="#">
