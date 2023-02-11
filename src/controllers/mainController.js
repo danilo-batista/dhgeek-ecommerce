@@ -1,6 +1,9 @@
+const { getProducts } = require('../controllers/productController');
+
 const mainController = {
-    home: (req, res) => {
-        res.render('../views/home/');
+    home: async (req, res) => {
+
+        return res.render('../views/home', { getProducts })
     },
 };
 

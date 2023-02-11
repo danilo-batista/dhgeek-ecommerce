@@ -17,8 +17,105 @@ const productController = {
                         required: true
                     }]
                 });
+            res.status(200).render('buscar-produto', { productData: productsList });
+
         } catch (err) {
-            return res.status(500).send({message:err.message});
+            return res.status(500).send({ message: err.message });
+        }
+    },
+
+    getProductById: async (req, res) => {
+        const { id } = req.params;
+        try {
+            const product = await database.Product.findByPk(id,
+                {
+                    include: [{
+                        model: database.ProductImages,
+                        as: 'productImages',
+                        required: true,
+                    },
+                    {
+                        model: database.ProductPromotions,
+                        as: 'productPromotions',
+                        required: true
+                    }]
+                });
+            res.status(200).render('produto', { productData: product });
+
+        } catch (err) {
+            return res.status(500).send({ message: err.message });
+        }
+    },
+
+    getProductsByCategory: async (req, res) => {
+        const { category } = req.params;
+        try {
+            const productsList = await database.Product.findAll(
+                {
+                    where: {
+                        category: req.params.category
+                    },
+                    order: [['id', 'ASC']],
+                    include: [{
+                        model: database.ProductImages,
+                        as: 'productImages',
+                        required: true
+                    },
+                    {
+                        model: database.ProductPromotions,
+                        as: 'productPromotions',
+                        required: true
+                    }]
+                });
+            res.status(200).render('buscar-produto', { productData: productsList });
+
+        } catch (err) {
+            return res.status(500).send({ message: err.message });
+        }
+    },
+    getProductsByName: async (req, res) => {
+        const { name } = req.params;
+        try {
+            const productsList = await database.Product.findAll(name,
+                {
+                    where: {
+                        name: req.params.name
+                    },
+                    order: [['id', 'ASC']],
+                    include: [{
+                        model: database.ProductImages,
+                        as: 'productImages',
+                        required: true
+                    },
+                    {
+                        model: database.ProductPromotions,
+                        as: 'productPromotions',
+                        required: true
+                    }]
+                });
+            res.status(200).render('buscar-produto', { productData: productsList });
+
+        } catch (err) {
+            return res.status(500).send({ message: err.message });
+        }
+    },
+
+    dashboardProduct: async (req, res) => {
+        return res.render("dashboard/products")
+    },
+
+    renderPageUpdate: async (req,res)=>{
+        const {id} = req.params;
+        try {
+            const product = await database.Product.findOne({
+                where:{
+                    id
+                }
+            })
+                
+            return res.render("dashboard/updateProduct", {product});
+        } catch (err) {
+            return res.status(500).send({ message: err.message });
         }
     },
 
@@ -64,22 +161,11 @@ const productController = {
 
             return res.send(product)
         } catch (err) {
-            return res.status(500).send({message:err.message});
+            return res.status(500).send({ message: err.message });
         }
     },
 
-    getProductById: async (req,res) => {
-        const { id } = req.params;
-        try {
-                const product = await database.Product.findByPk(id);
-                return res.send(product)
-        
-        } catch (err) {
-            return res.status(500).send({message:err.message});
-        }
-    },
-
-    deleteProduct: async (req,res) =>{
+    deleteProduct: async (req, res) => {
         try {
             await database.Product.destroy({
                 where: {
@@ -88,11 +174,11 @@ const productController = {
             });
             return res.redirect("/");
         } catch (err) {
-            return res.status(500).send({message:err.message});
+            return res.status(500).send({ message: err.message });
         }
     },
 
-    updateProduct: async (req,res) =>{
+    updateProduct: async (req, res) => {
         try {
             await database.Product.update(
             {
@@ -121,13 +207,11 @@ const productController = {
 
             return res.redirect("/");
         } catch (err) {
-            return res.status(500).send({message:err.message});
+            return res.status(500).send({ message: err.message });
         }
+
     },
 
-    exibir: (req, res) => {
-        res.render('../views/produto');
-    },
-};
+}
 
 module.exports = productController;

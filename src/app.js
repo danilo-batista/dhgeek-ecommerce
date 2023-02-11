@@ -31,7 +31,7 @@ app.use(methodOverride('_method'));
 
 app.use(routes);
 app.use('/usuario', userRoutes);
-app.use('/produto', productRoutes)
+app.use('/produtos', productRoutes)
 
 /* Configurações de servidor */
 const port = 3333;
