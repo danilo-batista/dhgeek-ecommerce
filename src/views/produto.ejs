@@ -27,12 +27,14 @@
           <img class="hero--image" src="<%= productData.productionBanner %>"
             alt="Anúncio da nova linha de produtos da marca <%= productData.disneyBrand %>" />
         </section>
+
         <div class="path">
           <a href="/">Home</a> > <a href="/produtos">Todos os produtos</a> > <a
             href="/produtos/<%= productData.category.toLowerCase() %>">
             <%= productData.category %>
           </a> > <%= productData.name %>
         </div>
+
         <section class="item">
           <div class="item__gallery">
             <div class="item__gallery__main">
@@ -88,6 +90,7 @@
                 </p>
               </div>
         </section>
+
         <section class="products">
           <div class="products__banner__title">
             <div class="products__banner__buttons">
@@ -213,8 +216,8 @@
               </div>
             </div>
           </div>
-
         </section>
+
         <article class="description">
           <p class="description__title">
             Descrição
@@ -233,6 +236,7 @@
                           <strong>Profundidade<small>(cm)</small></strong>: <%= productData.depth %> cm<br>
           </p>
         </article>
+
         <section class="products">
           <div class="products__banner__title">
             <div class="products__banner__buttons">
