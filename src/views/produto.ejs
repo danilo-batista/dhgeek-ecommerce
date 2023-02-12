@@ -38,23 +38,23 @@
             <div class="item__gallery__main">
               <img class="item__gallery__main--image"
                 src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
-                alt="Posição 1" />
+                alt="<%= productData.name %>" />
             </div>
             <div class="item__gallery__mini">
               <div class="item__gallery__mini-card">
                 <img class="item__gallery__mini-card--image"
                   src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image2.webp"
-                  alt="Posição 2" />
+                  alt="<%= productData.name %>" />
               </div>
               <div class="item__gallery__mini-card">
                 <img class="item__gallery__mini-card--image"
                   src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image3.webp"
-                  alt="Posição 3" />
+                  alt="<%= productData.name %>" />
               </div>
               <div class="item__gallery__mini-card">
                 <img class="item__gallery__mini-card--image"
                   src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image4.webp"
-                  alt="Posição 4" />
+                  alt="<%= productData.name %>" />
               </div>
             </div>
           </div>
@@ -87,163 +87,276 @@
                   Pague com KOIN em 3x sem juros no boleto!
                 </p>
               </div>
-  </div>
-  </section>
-  <section class="products">
-    <div class="products__banner__title">
-      <div class="products__banner__buttons">
-        <a href="#"><img src="/images/icons/ver-mais-produtos.svg" alt="ver-mais-produtos"></a>
-        <a href="#" class="products__banner__buttons--see-more">Veja mais produtos
-          <span>
-            <%= productData.category %>
-          </span>
-        </a>
-        <a href="#"><img src="/images/icons/ir-para-topo.svg" alt="ir-para-topo"></a>
-        <a href="#" class="products__banner__buttons--go-top">Ir para o topo</a>
-      </div>
-    </div>
+        </section>
+        <section class="products">
+          <div class="products__banner__title">
+            <div class="products__banner__buttons">
+              <a href="#"><img src="/images/icons/ver-mais-produtos.svg" alt="ver-mais-produtos"></a>
+              <a href="/produtos/<%= productData.category.toLowerCase() %>"
+                class="products__banner__buttons--see-more">Veja
+                mais produtos
+                <span>
+                  <%= productData.category %>
+                </span>
+              </a>
+              <a href="#"><img src="/images/icons/ir-para-topo.svg" alt="ir-para-topo"></a>
+              <a href="#" class="products__banner__buttons--go-top">Ir para o topo</a>
+            </div>
+          </div>
 
-    <div class="products__card">
-      <div>
-        <a href="#" id="back-button"><img src="/images/icons/left-arrow.svg" alt="back-button"></a>
-        <a href="#" id="next-button"><img src="/images/icons/right-arrow.svg" alt="next-button"></a>
-      </div>
+          <div class="products__card">
+            <div>
+              <a href="#" id="back-button"><img src="/images/icons/left-arrow.svg" alt="back-button"></a>
+              <a href="#" id="next-button"><img src="/images/icons/right-arrow.svg" alt="next-button"></a>
+            </div>
 
-      <div class="products__card__area">
-        <div class="products__card__item">
-          <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-            class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-          <div class="products__card__info">
-            <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-            <p><span id="real">R$</span> 3.000,00</p>
-            <span>12x de R$ 250,00</span>
+            <div class="products__card__area">
+              <div class="products__card__item"
+                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
+                style="cursor: pointer;">
+                <img class="products__card__img"
+                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
+                  alt="<%= productData.name %>" />
+                <div class="products__card__info">
+                  <a href="#">
+                    <%= productData.name %>
+                  </a>
+                  <% for (let productPrice of productData.productPromotions) { %>
+                    <p><span id="real">R$</span>
+                      <%= productPrice.promotionalPrice %>
+                    </p>
+                    <span>
+                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
+                    </span>
+                    <% } %>
+                </div>
+              </div>
+              <div class="products__card__item--768px"
+                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
+                style="cursor: pointer;">
+                <img class="products__card__img"
+                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
+                  alt="<%= productData.name %>" />
+                <div class="products__card__info">
+                  <a href="#">
+                    <%= productData.name %>
+                  </a>
+                  <% for (let productPrice of productData.productPromotions) { %>
+                    <p><span id="real">R$</span>
+                      <%= productPrice.promotionalPrice %>
+                    </p>
+                    <span>
+                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
+                    </span>
+                    <% } %>
+                </div>
+              </div>
+              <div class="products__card__item--768px"
+                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
+                style="cursor: pointer;">
+                <img class="products__card__img"
+                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
+                  alt="<%= productData.name %>" />
+                <div class="products__card__info">
+                  <a href="#">
+                    <%= productData.name %>
+                  </a>
+                  <% for (let productPrice of productData.productPromotions) { %>
+                    <p><span id="real">R$</span>
+                      <%= productPrice.promotionalPrice %>
+                    </p>
+                    <span>
+                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
+                    </span>
+                    <% } %>
+                </div>
+              </div>
+              <div class="products__card__item--1440px"
+                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
+                style="cursor: pointer;">
+                <img class="products__card__img"
+                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
+                  alt="<%= productData.name %>" />
+                <div class="products__card__info">
+                  <a href="#">
+                    <%= productData.name %>
+                  </a>
+                  <% for (let productPrice of productData.productPromotions) { %>
+                    <p><span id="real">R$</span>
+                      <%= productPrice.promotionalPrice %>
+                    </p>
+                    <span>
+                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
+                    </span>
+                    <% } %>
+                </div>
+              </div>
+              <div class="products__card__item--1440px"
+                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
+                style="cursor: pointer;">
+                <img class="products__card__img"
+                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
+                  alt="<%= productData.name %>" />
+                <div class="products__card__info">
+                  <a href="#">
+                    <%= productData.name %>
+                  </a>
+                  <% for (let productPrice of productData.productPromotions) { %>
+                    <p><span id="real">R$</span>
+                      <%= productPrice.promotionalPrice %>
+                    </p>
+                    <span>
+                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
+                    </span>
+                    <% } %>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="products__card__item--768px">
-          <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-            class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-          <div class="products__card__info">
-            <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-            <p><span id="real">R$</span> 3.000,00</p>
-            <span>12x de R$ 250,00</span>
+
+        </section>
+        <article class="description">
+          <p class="description__title">
+            Descrição
+          </p>
+          <p class="description__text">
+            <%= productData.description %>
+          </p><br>
+          <p class="description__text">
+            <strong>Fabricante</strong>: <%= productData.manufacturer %><br>
+              <strong>Série</strong>: <%= productData.brand %><br>
+                <strong>Personagem</strong>: <%= productData.character %><br>
+                  <strong>Material base</strong>: <%= productData.material %><br>
+                    <strong>Peso<small>(kg)</small></strong>: <%= productData.weight %> kg<br>
+                      <strong>Altura<small>(cm)</small></strong>: <%= productData.height %> cm<br>
+                        <strong>Largura<small>(cm)</small></strong>: <%= productData.width %> cm<br>
+                          <strong>Profundidade<small>(cm)</small></strong>: <%= productData.depth %> cm<br>
+          </p>
+        </article>
+        <section class="products">
+          <div class="products__banner__title">
+            <div class="products__banner__buttons">
+              <a href="#"><img src="/images/icons/ver-mais-produtos.svg" alt="ver-mais-produtos"></a>
+              <a href="/produtos" class="products__banner__buttons--see-more">Veja mais produtos de diversas linhas
+              </a>
+              <a href="#"><img src="/images/icons/ir-para-topo.svg" alt="ir-para-topo"></a>
+              <a href="#" class="products__banner__buttons--go-top">Ir para o topo</a>
+            </div>
           </div>
-        </div>
-        <div class="products__card__item--768px">
-          <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-            class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-          <div class="products__card__info">
-            <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-            <p><span id="real">R$</span> 3.000,00</p>
-            <span>12x de R$ 250,00</span>
+          <div class="products__card">
+            <div>
+              <a href="#" id="back-button"><img src="/images/icons/left-arrow.svg" alt="back-button"></a>
+              <a href="#" id="next-button"><img src="/images/icons/right-arrow.svg" alt="next-button"></a>
+            </div>
+            <div class="products__card__area">
+              <div class="products__card__item"
+                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
+                style="cursor: pointer;">
+                <img class="products__card__img"
+                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
+                  alt="<%= productData.name %>" />
+                <div class="products__card__info">
+                  <a href="#">
+                    <%= productData.name %>
+                  </a>
+                  <% for (let productPrice of productData.productPromotions) { %>
+                    <p><span id="real">R$</span>
+                      <%= productPrice.promotionalPrice %>
+                    </p>
+                    <span>
+                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
+                    </span>
+                    <% } %>
+                </div>
+              </div>
+              <div class="products__card__item--768px"
+                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
+                style="cursor: pointer;">
+                <img class="products__card__img"
+                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
+                  alt="<%= productData.name %>" />
+                <div class="products__card__info">
+                  <a href="#">
+                    <%= productData.name %>
+                  </a>
+                  <% for (let productPrice of productData.productPromotions) { %>
+                    <p><span id="real">R$</span>
+                      <%= productPrice.promotionalPrice %>
+                    </p>
+                    <span>
+                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
+                    </span>
+                    <% } %>
+                </div>
+              </div>
+              <div class="products__card__item--768px"
+                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
+                style="cursor: pointer;">
+                <img class="products__card__img"
+                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
+                  alt="<%= productData.name %>" />
+                <div class="products__card__info">
+                  <a href="#">
+                    <%= productData.name %>
+                  </a>
+                  <% for (let productPrice of productData.productPromotions) { %>
+                    <p><span id="real">R$</span>
+                      <%= productPrice.promotionalPrice %>
+                    </p>
+                    <span>
+                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
+                    </span>
+                    <% } %>
+                </div>
+              </div>
+              <div class="products__card__item--1440px"
+                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
+                style="cursor: pointer;">
+                <img class="products__card__img"
+                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
+                  alt="<%= productData.name %>" />
+                <div class="products__card__info">
+                  <a href="#">
+                    <%= productData.name %>
+                  </a>
+                  <% for (let productPrice of productData.productPromotions) { %>
+                    <p><span id="real">R$</span>
+                      <%= productPrice.promotionalPrice %>
+                    </p>
+                    <span>
+                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
+                    </span>
+                    <% } %>
+                </div>
+              </div>
+              <div class="products__card__item--1440px"
+                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
+                style="cursor: pointer;">
+                <img class="products__card__img"
+                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
+                  alt="<%= productData.name %>" />
+                <div class="products__card__info">
+                  <a href="#">
+                    <%= productData.name %>
+                  </a>
+                  <% for (let productPrice of productData.productPromotions) { %>
+                    <p><span id="real">R$</span>
+                      <%= productPrice.promotionalPrice %>
+                    </p>
+                    <span>
+                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
+                    </span>
+                    <% } %>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="products__card__item--1440px">
-          <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-            class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-          <div class="products__card__info">
-            <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-            <p><span id="real">R$</span> 3.000,00</p>
-            <span>12x de R$ 250,00</span>
-          </div>
-        </div>
-        <div class="products__card__item--1440px">
-          <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-            class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-          <div class="products__card__info">
-            <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-            <p><span id="real">R$</span> 3.000,00</p>
-            <span>12x de R$ 250,00</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <article class="description">
-    <p class="description__title">
-      Descrição
-    </p>
-    <p class="description__text">
-      <%= productData.description %>
-    </p><br>
-    <p class="description__text">
-      <strong>Fabricante</strong>: <%= productData.manufacturer %><br>
-        <strong>Série</strong>: <%= productData.brand %><br>
-          <strong>Personagem</strong>: <%= productData.character %><br>
-            <strong>Material base</strong>: <%= productData.material %><br>
-              <strong>Peso<small>(kg)</small></strong>: <%= productData.weight %> kg<br>
-                <strong>Altura<small>(cm)</small></strong>: <%= productData.height %> cm<br>
-                  <strong>Largura<small>(cm)</small></strong>: <%= productData.width %> cm<br>
-                    <strong>Profundidade<small>(cm)</small></strong>: <%= productData.depth %> cm<br>
-    </p>
-  </article>
-  <section class="products">
-    <div class="products__banner__title">
-      <div class="products__banner__buttons">
-        <a href="#"><img src="/images/icons/ver-mais-produtos.svg" alt="ver-mais-produtos"></a>
-        <a href="#" class="products__banner__buttons--see-more">Veja mais produtos de diversas linhas
-        </a>
-        <a href="#"><img src="/images/icons/ir-para-topo.svg" alt="ir-para-topo"></a>
-        <a href="#" class="products__banner__buttons--go-top">Ir para o topo</a>
-      </div>
-    </div>
-    <div class="products__card">
-      <div>
-        <a href="#" id="back-button"><img src="/images/icons/left-arrow.svg" alt="back-button"></a>
-        <a href="#" id="next-button"><img src="/images/icons/right-arrow.svg" alt="next-button"></a>
-      </div>
-      <div class="products__card__area">
-        <div class="products__card__item">
-          <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-            class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-          <div class="products__card__info">
-            <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-            <p><span id="real">R$</span> 3.000,00</p>
-            <span>12x de R$ 250,00</span>
-          </div>
-        </div>
-        <div class="products__card__item--768px">
-          <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-            class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-          <div class="products__card__info">
-            <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-            <p><span id="real">R$</span> 3.000,00</p>
-            <span>12x de R$ 250,00</span>
-          </div>
-        </div>
-        <div class="products__card__item--768px">
-          <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-            class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-          <div class="products__card__info">
-            <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-            <p><span id="real">R$</span> 3.000,00</p>
-            <span>12x de R$ 250,00</span>
-          </div>
-        </div>
-        <div class="products__card__item--1440px">
-          <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-            class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-          <div class="products__card__info">
-            <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-            <p><span id="real">R$</span> 3.000,00</p>
-            <span>12x de R$ 250,00</span>
-          </div>
-        </div>
-        <div class="products__card__item--1440px">
-          <img src="/images/products-categories/starwars/estatua-the-child-baby-yoda-mandalorian-2x.svg"
-            class="products__card__img" alt="estatua-the-child-baby-yoda-mandalorian">
-          <div class="products__card__info">
-            <a href="#">Estátua The Child na cadeira Baby Yoda Mandalorian</a>
-            <p><span id="real">R$</span> 3.000,00</p>
-            <span>12x de R$ 250,00</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <%- include("./partials/main-footer") %>
-    </main>
-    <%- include("./partials/footer") %>
-      <%- include("./partials/copyright") %>
+        </section>
+
+        <%- include("./partials/main-footer") %>
+      </main>
+      <%- include("./partials/footer") %>
+        <%- include("./partials/copyright") %>
 </body>
 
 </html>

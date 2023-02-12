@@ -67,7 +67,7 @@ const productController = {
                         required: true
                     }]
                 });
-            res.status(200).render('buscar-produto', { productData: productsList });
+            res.status(200).render('showcase', { productData: productsList });
 
         } catch (err) {
             return res.status(500).send({ message: err.message });

@@ -1,8 +1,26 @@
+const database = require('../models/index');
 
 const mainController = {
     home: async (req, res) => {
-
-        return res.render('../views/home')
+        try {
+            const productsList = await database.Product.findAll(
+                {
+                    order: [['id', 'ASC']],
+                    include: [{
+                        model: database.ProductImages,
+                        as: 'productImages',
+                        required: true
+                    },
+                    {
+                        model: database.ProductPromotions,
+                        as: 'productPromotions',
+                        required: true
+                    }]
+                });
+            return res.render('../views/home', { productData: productsList });
+        } catch (err) {
+            return res.status(500).send({ message: err.message });
+        }
     },
 };
 
