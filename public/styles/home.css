@@ -61,7 +61,7 @@
 
 .products__card__info {
     width: 176px;
-    height: 198px;
+    min-height: 198px;
     background-color: var(--disney-lightgray);
     border-radius: 0 0 8px 8px;
     padding: 1.2rem 1rem 0 1rem;

@@ -4,8 +4,9 @@ const mainController = {
     home: async (req, res) => {
         try {
             const productsList = await database.Product.findAll(
-                {
+                {   
                     order: [['id', 'ASC']],
+                    limit: 10,
                     include: [{
                         model: database.ProductImages,
                         as: 'productImages',
@@ -17,7 +18,17 @@ const mainController = {
                         required: true
                     }]
                 });
-            return res.render('../views/home', { productData: productsList });
+            
+            const {id} = req.userInfo;
+            const user = await database.User.findByPk(id, {
+                include:[{
+                    model: database.UserTypes,
+                    as: "user_types",
+                    required : true
+                    }]
+                });
+
+            return res.render('../views/home', { productData: productsList, user });
         } catch (err) {
             return res.status(500).send({ message: err.message });
         }

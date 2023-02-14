@@ -60,6 +60,11 @@ header {
     display: none;
 }
 
+#login-button a{
+    color: var(--disney-white);
+    text-decoration: none;
+}
+
 #list-navbar {
     display: none;
 }
