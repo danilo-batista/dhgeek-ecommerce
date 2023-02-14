@@ -1,6 +1,7 @@
 const jwt  = require("jsonwebtoken");
+const database = require('../models/index');
 
-const validationToken = (req,res,next) =>{
+const validationToken = async (req,res,next) =>{
     const {token} = req.cookies;
 
     if(!token){
@@ -8,18 +9,43 @@ const validationToken = (req,res,next) =>{
     }
   
     try{
-        const decoded = jwt.verify(token, process.env.SECRET);
-        console.log(decoded);
-
+        const decoded = jwt.verify(token, process.env.SECRET, (err, userInfo)=>{
+          if(err){
+            res.status(403).end();
+            return;
+          }
+          req.userInfo = userInfo;
+        });
+        
       } catch (err) {
         console.log(err);
         res.cookie("token", "");
         return res.redirect("/usuario/logar");
       }
 
+  
     next();
 }
 
+const validationAdmin = async (req,res,next) =>{
+  const {id} = req.userInfo;
+
+  const user = await database.User.findByPk(id, {
+    include:[{
+      model: database.UserTypes,
+      as: "user_types",
+      required : true
+    }]
+  });
+
+  if(user.typeId == 1){
+    next();
+  }else{
+    return res.redirect("/");
+  }
+}
+
 module.exports = {
-    validationToken
+    validationToken,
+    validationAdmin
 }
