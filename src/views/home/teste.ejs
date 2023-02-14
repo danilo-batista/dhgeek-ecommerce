@@ -1,0 +1,29 @@
+<div class="products__card__area">
+  <% for (let product of productData) { %>
+      <% if(product.category==="StarWars" ) { %>
+          <div class="products__card__item"
+              onclick="location.href='/produtos/<%= product.id %>/<%= product.slug %>'"
+              style="cursor: pointer;">
+                <img class="products__card__img"
+                  src="/images/products-categories/<%= product.category %>/<%= product.slug %>-image1.webp"
+                  alt="<%= product.name %>" />
+              <div class="products__card__info">
+                  <a href="#">
+                      <%= product.name %>
+                  </a>
+                  <% for (let productPrice of product.productPromotions) { %>
+                      <p><span id="real">R$</span>
+                          <%= productPrice.promotionalPrice %>
+                      </p>
+                      <span>
+                          <%= productPrice.paymentsConditions %>x de R$ <%=
+                                  productPrice.paymentsValues %>
+                      </span>
+                      <% } %>
+              </div>
+          </div>
+          <% } %>
+              <% } %>
+</div>
+
+</div>
