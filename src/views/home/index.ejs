@@ -50,6 +50,7 @@
                     <div class="products__card__area">
                         <% for (let product of productData) { %>
                             <% if(product.category==="StarWars" ) { %>
+                                <div class="products__card-geral">
                                 <div class="products__card__item"
                                     onclick="location.href='/produtos/<%= product.id %>/<%= product.slug %>'"
                                     style="cursor: pointer;">
@@ -69,7 +70,15 @@
                                                         productPrice.paymentsValues %>
                                             </span>
                                             <% } %>
+                                            
                                     </div>
+                                </div>
+                                <% if (user.typeId == 1) { %>
+                                    <div class="button-admin"
+                                    onclick="location.href='/produtos/dashboard/updateProduct/<%= product.id %>'">
+                                        <a href="#"><img src="/images/icons/admin-edit_icon.svg" alt="edit"></a>
+                                    </div>
+                                <% } %>
                                 </div>
                                 <% } %>
                                     <% } %>
@@ -107,6 +116,7 @@
                     <div class="products__card__area">
                         <% for (let product of productData) { %>
                             <% if(product.category==="Princesas" ) { %>
+                                <div class="products__card-geral">
                                 <div class="products__card__item"
                                     onclick="location.href='/produtos/<%= product.id %>/<%= product.slug %>'"
                                     style="cursor: pointer;">
@@ -119,7 +129,7 @@
                                         </a>
                                         <% for (let productPrice of product.productPromotions) { %>
                                             <p><span id="real">R$</span>
-                                                <%= productPrice.promotionalPrice %>
+                                                <%= product.fullPrice %>
                                             </p>
                                             <span>
                                                 <%= productPrice.paymentsConditions %>x de R$ <%=
@@ -127,9 +137,16 @@
                                             </span>
                                             <% } %>
                                     </div>
+                                    </div>
+                                    <% if (user.typeId == 1) { %>
+                                        <div class="button-admin"
+                                        onclick="location.href='/produtos/dashboard/updateProduct/<%= product.id %>'">
+                                            <a href="#"><img src="/images/icons/admin-edit_icon.svg" alt="edit"></a>
+                                        </div>
+                                      <% } %>
                                 </div>
                                 <% } %>
-                                    <% } %>
+                                <% } %>
                     </div>
 
                 </div>
@@ -164,6 +181,7 @@
                     <div class="products__card__area">
                         <% for (let product of productData) { %>
                             <% if(product.category==="Marvel" ) { %>
+                                <div class="products__card-geral">
                                 <div class="products__card__item"
                                     onclick="location.href='/produtos/<%= product.id %>/<%= product.slug %>'"
                                     style="cursor: pointer;">
@@ -184,6 +202,13 @@
                                             </span>
                                             <% } %>
                                     </div>
+                                </div>
+                                <% if (user.typeId == 1) { %>
+                                    <div class="button-admin"
+                                    onclick="location.href='/produtos/dashboard/updateProduct/<%= product.id %>'">
+                                        <a href="#"><img src="/images/icons/admin-edit_icon.svg" alt="edit"></a>
+                                    </div>
+                                  <% } %>
                                 </div>
                                 <% } %>
                                     <% } %>
@@ -221,6 +246,7 @@
                     <div class="products__card__area">
                         <% for (let product of productData) { %>
                             <% if(product.category==="Classicos" ) { %>
+                                <div class="products__card-geral">
                                 <div class="products__card__item"
                                     onclick="location.href='/produtos/<%= product.id %>/<%= product.slug %>'"
                                     style="cursor: pointer;">
@@ -242,6 +268,13 @@
                                             <% } %>
                                     </div>
                                 </div>
+                                <% if (user.typeId == 1) { %>
+                                    <div class="button-admin"
+                                    onclick="location.href='/produtos/dashboard/updateProduct/<%= product.id %>'">
+                                        <a href="#"><img src="/images/icons/admin-edit_icon.svg" alt="edit"></a>
+                                    </div>
+                                  <% } %>
+                                </div>
                                 <% } %>
                                     <% } %>
                     </div>
@@ -253,7 +286,7 @@
         </main>
 
         <%- include("../partials/footer") %>
-            <%- include("../partials/copyright") %>
+        <%- include("../partials/copyright") %>
 </body>
 
 </html>
