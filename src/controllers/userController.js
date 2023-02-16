@@ -31,7 +31,8 @@ const userController = {
             const passwordCript = await bcrypt.hash(password, 10)
             const user = await database.User.create({
                 email,
-                password: passwordCript
+                password: passwordCript,
+                typeId: 3
             })
             
             //return res.send(user);
@@ -61,7 +62,7 @@ const userController = {
                     process.env.SECRET, {expiresIn: "24h"});
                     res.cookie("token", token);
                     //return res.status(200).send({message:"Login feito com sucesso", token});
-                    return res.redirect("/")
+                    return res.redirect("/home")
                 }else{
                     return res.status(404).send({message:"Usuário ou senha."});
                 }

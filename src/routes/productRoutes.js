@@ -10,9 +10,9 @@ router.get('/', Product.getProducts);
 router.get('/:id/:slug', Product.getProductById);
 router.get('/:category', Product.getProductsByCategory);
 
-router.post("/create", validationToken, upload.single("productionBanner"), Product.createProduct);
+router.post("/create", validationToken, upload.fields([{name:"productionBanner", maxCount: 1}, {name:"path", maxCount: 1}]), Product.createProduct);
 router.get("/dashboard/updateProduct/:id", validationToken, validationAdmin, Product.renderPageUpdate)
-router.put("/dashboard/updateProduct/:id", validationToken, upload.single("productionBanner"), Product.updateProduct);
+router.put("/dashboard/updateProduct/:id", validationToken, upload.fields([{name:"productionBanner", maxCount: 1}, {name:"path", maxCount: 1}]), Product.updateProduct);
 router.delete("/dashboard/updateProduct/:id", validationToken, Product.deleteProduct);
 
 /* em teste ainda */

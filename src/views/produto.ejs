@@ -24,7 +24,7 @@
     <%- include("./partials/header.ejs") %>
       <main>
         <section class="hero">
-          <img class="hero--image" src="<%= productData.productionBanner %>"
+          <img class="hero--image" src="/upload/<%= productData.productionBanner %>"
             alt="Anúncio da nova linha de produtos da marca <%= productData.disneyBrand %>" />
         </section>
 
@@ -38,24 +38,20 @@
         <section class="item">
           <div class="item__gallery">
             <div class="item__gallery__main">
-              <img class="item__gallery__main--image"
-                src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
+              <img class="item__gallery__main--image" src="\upload\<%= productData.productImages[0].path %>"
                 alt="<%= productData.name %>" />
             </div>
             <div class="item__gallery__mini">
               <div class="item__gallery__mini-card">
-                <img class="item__gallery__mini-card--image"
-                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image2.webp"
+                <img class="item__gallery__mini-card--image" src="\upload\<%= productData.productImages[0].path %>"
                   alt="<%= productData.name %>" />
               </div>
               <div class="item__gallery__mini-card">
-                <img class="item__gallery__mini-card--image"
-                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image3.webp"
+                <img class="item__gallery__mini-card--image" src="\upload\<%= productData.productImages[0].path %>"
                   alt="<%= productData.name %>" />
               </div>
               <div class="item__gallery__mini-card">
-                <img class="item__gallery__mini-card--image"
-                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image4.webp"
+                <img class="item__gallery__mini-card--image" src="\upload\<%= productData.productImages[0].path %>"
                   alt="<%= productData.name %>" />
               </div>
             </div>
@@ -114,107 +110,30 @@
             </div>
 
             <div class="products__card__area">
-              <div class="products__card__item"
-                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
-                style="cursor: pointer;">
-                <img class="products__card__img"
-                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
-                  alt="<%= productData.name %>" />
-                <div class="products__card__info">
-                  <a href="#">
-                    <%= productData.name %>
-                  </a>
-                  <% for (let productPrice of productData.productPromotions) { %>
-                    <p><span id="real">R$</span>
-                      <%= productPrice.promotionalPrice %>
-                    </p>
-                    <span>
-                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
-                    </span>
+              <% for (let product of productsList) { %>
+                <% if(product.category===productData.category ) { %>
+                  <div class="products__card__item"
+                    onclick="location.href='/produtos/<%= product.id %>/<%= product.slug %>'" style="cursor: pointer;">
+                    <img class="products__card__img" src="\upload\<%= product.productImages[0].path %>"
+                      alt="<%= product.name %>" />
+                    <div class="products__card__info">
+                      <a href="#">
+                        <%= product.name %>
+                      </a>
+                      <% for (let productPrice of product.productPromotions) { %>
+                        <p><span id="real">R$</span>
+                          <%= productPrice.promotionalPrice %>
+                        </p>
+                        <span>
+                          <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
+                        </span>
+                        <% } %>
+                    </div>
+                  </div>
+                  <% } %>
                     <% } %>
-                </div>
-              </div>
-              <div class="products__card__item--768px"
-                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
-                style="cursor: pointer;">
-                <img class="products__card__img"
-                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
-                  alt="<%= productData.name %>" />
-                <div class="products__card__info">
-                  <a href="#">
-                    <%= productData.name %>
-                  </a>
-                  <% for (let productPrice of productData.productPromotions) { %>
-                    <p><span id="real">R$</span>
-                      <%= productPrice.promotionalPrice %>
-                    </p>
-                    <span>
-                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
-                    </span>
-                    <% } %>
-                </div>
-              </div>
-              <div class="products__card__item--768px"
-                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
-                style="cursor: pointer;">
-                <img class="products__card__img"
-                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
-                  alt="<%= productData.name %>" />
-                <div class="products__card__info">
-                  <a href="#">
-                    <%= productData.name %>
-                  </a>
-                  <% for (let productPrice of productData.productPromotions) { %>
-                    <p><span id="real">R$</span>
-                      <%= productPrice.promotionalPrice %>
-                    </p>
-                    <span>
-                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
-                    </span>
-                    <% } %>
-                </div>
-              </div>
-              <div class="products__card__item--1440px"
-                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
-                style="cursor: pointer;">
-                <img class="products__card__img"
-                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
-                  alt="<%= productData.name %>" />
-                <div class="products__card__info">
-                  <a href="#">
-                    <%= productData.name %>
-                  </a>
-                  <% for (let productPrice of productData.productPromotions) { %>
-                    <p><span id="real">R$</span>
-                      <%= productPrice.promotionalPrice %>
-                    </p>
-                    <span>
-                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
-                    </span>
-                    <% } %>
-                </div>
-              </div>
-              <div class="products__card__item--1440px"
-                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
-                style="cursor: pointer;">
-                <img class="products__card__img"
-                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
-                  alt="<%= productData.name %>" />
-                <div class="products__card__info">
-                  <a href="#">
-                    <%= productData.name %>
-                  </a>
-                  <% for (let productPrice of productData.productPromotions) { %>
-                    <p><span id="real">R$</span>
-                      <%= productPrice.promotionalPrice %>
-                    </p>
-                    <span>
-                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
-                    </span>
-                    <% } %>
-                </div>
-              </div>
             </div>
+
           </div>
         </section>
 
@@ -253,106 +172,26 @@
               <a href="#" id="next-button"><img src="/images/icons/right-arrow.svg" alt="next-button"></a>
             </div>
             <div class="products__card__area">
-              <div class="products__card__item"
-                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
-                style="cursor: pointer;">
-                <img class="products__card__img"
-                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
-                  alt="<%= productData.name %>" />
-                <div class="products__card__info">
-                  <a href="#">
-                    <%= productData.name %>
-                  </a>
-                  <% for (let productPrice of productData.productPromotions) { %>
-                    <p><span id="real">R$</span>
-                      <%= productPrice.promotionalPrice %>
-                    </p>
-                    <span>
-                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
-                    </span>
-                    <% } %>
+              <% for (let product of productsList) { %>
+                <div class="products__card__item"
+                  onclick="location.href='/produtos/<%= product.id %>/<%= product.slug %>'" style="cursor: pointer;">
+                  <img class="products__card__img" src="\upload\<%= product.productImages[0].path %>"
+                    alt="<%= product.name %>" />
+                  <div class="products__card__info">
+                    <a href="#">
+                      <%= product.name %>
+                    </a>
+                    <% for (let productPrice of product.productPromotions) { %>
+                      <p><span id="real">R$</span>
+                        <%= productPrice.promotionalPrice %>
+                      </p>
+                      <span>
+                        <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
+                      </span>
+                  </div>
                 </div>
-              </div>
-              <div class="products__card__item--768px"
-                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
-                style="cursor: pointer;">
-                <img class="products__card__img"
-                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
-                  alt="<%= productData.name %>" />
-                <div class="products__card__info">
-                  <a href="#">
-                    <%= productData.name %>
-                  </a>
-                  <% for (let productPrice of productData.productPromotions) { %>
-                    <p><span id="real">R$</span>
-                      <%= productPrice.promotionalPrice %>
-                    </p>
-                    <span>
-                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
-                    </span>
-                    <% } %>
-                </div>
-              </div>
-              <div class="products__card__item--768px"
-                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
-                style="cursor: pointer;">
-                <img class="products__card__img"
-                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
-                  alt="<%= productData.name %>" />
-                <div class="products__card__info">
-                  <a href="#">
-                    <%= productData.name %>
-                  </a>
-                  <% for (let productPrice of productData.productPromotions) { %>
-                    <p><span id="real">R$</span>
-                      <%= productPrice.promotionalPrice %>
-                    </p>
-                    <span>
-                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
-                    </span>
-                    <% } %>
-                </div>
-              </div>
-              <div class="products__card__item--1440px"
-                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
-                style="cursor: pointer;">
-                <img class="products__card__img"
-                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
-                  alt="<%= productData.name %>" />
-                <div class="products__card__info">
-                  <a href="#">
-                    <%= productData.name %>
-                  </a>
-                  <% for (let productPrice of productData.productPromotions) { %>
-                    <p><span id="real">R$</span>
-                      <%= productPrice.promotionalPrice %>
-                    </p>
-                    <span>
-                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
-                    </span>
-                    <% } %>
-                </div>
-              </div>
-              <div class="products__card__item--1440px"
-                onclick="location.href='/produtos/<%= productData.id %>/<%= productData.slug %>'"
-                style="cursor: pointer;">
-                <img class="products__card__img"
-                  src="/images/products-categories/<%= productData.category %>/<%= productData.slug %>-image1.webp"
-                  alt="<%= productData.name %>" />
-                <div class="products__card__info">
-                  <a href="#">
-                    <%= productData.name %>
-                  </a>
-                  <% for (let productPrice of productData.productPromotions) { %>
-                    <p><span id="real">R$</span>
-                      <%= productPrice.promotionalPrice %>
-                    </p>
-                    <span>
-                      <%= productPrice.paymentsConditions %>x de R$ <%= productPrice.paymentsValues %>
-                    </span>
-                    <% } %>
-                </div>
-              </div>
+                <% } %>
+                  <% } %>
             </div>
           </div>
         </section>

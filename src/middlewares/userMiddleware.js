@@ -15,6 +15,7 @@ const validationToken = async (req,res,next) =>{
             return;
           }
           req.userInfo = userInfo;
+          next();
         });
         
       } catch (err) {
@@ -24,7 +25,7 @@ const validationToken = async (req,res,next) =>{
       }
 
   
-    next();
+    
 }
 
 const validationAdmin = async (req,res,next) =>{

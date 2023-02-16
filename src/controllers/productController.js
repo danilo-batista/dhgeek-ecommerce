@@ -40,7 +40,21 @@ const productController = {
                         required: true
                     }]
                 });
-            res.status(200).render('produto', { productData: product });
+            const productsList = await database.Product.findAll(
+                {
+                    order: [['id', 'ASC']],
+                    include: [{
+                        model: database.ProductImages,
+                        as: 'productImages',
+                        required: true
+                    },
+                    {
+                        model: database.ProductPromotions,
+                        as: 'productPromotions',
+                        required: true
+                    }]
+                });
+            res.status(200).render('produto', { productData: product, productsList: productsList });
 
         } catch (err) {
             return res.status(500).send({ message: err.message });
@@ -128,7 +142,7 @@ const productController = {
                 title: req.body.title,
                 category: req.body.category,
                 department: req.body.department,
-                productionBanner: req.file.filename,
+                productionBanner: req.files.productionBanner[0].filename,
                 description: req.body.description,
                 manufacturer: req.body.manufacturer,
                 brand: req.body.brand,
@@ -141,7 +155,23 @@ const productController = {
                 fullPrice: req.body.fullPrice
             });
 
-            return res.send(product)
+            const productImg = await database.ProductImages.create({
+                path: req.files.path[0].filename,
+                productId: product.id
+            })
+
+            const promotions = await database.ProductPromotions.create({
+                discount: req.body.discount,
+                promotionalPrice: req.body.promotionalPrice,
+                paymentsConditions: req.body.paymentsConditions,
+                paymentsValues: req.body.paymentsValues,
+                paymentsFee: "sem juros",
+                paymentsShipping: req.body.paymentsShipping,
+                productId: product.id
+
+            })
+
+            return res.redirect("/home");
         } catch (err) {
             return res.status(500).send({ message: err.message });
         }
@@ -154,14 +184,31 @@ const productController = {
                     id: req.params.id
                 }
             });
-            return res.redirect("/");
+            return res.redirect("/home");
         } catch (err) {
             return res.status(500).send({ message: err.message });
         }
     },
 
     updateProduct: async (req, res) => {
+        const { path, productionBanner } = req.files;
         try {
+            const product = await database.Product.findByPk(req.params.id,
+                {
+                    include: [{
+                        model: database.ProductImages,
+                        as: 'productImages',
+                        required: true,
+                    },
+                    {
+                        model: database.ProductPromotions,
+                        as: 'productPromotions',
+                        required: true
+                    }]
+                });
+
+            const imgProduct = await database.ProductImages.findOne({ where: { productId: req.params.id } });
+
             await database.Product.update(
                 {
                     name: req.body.name,
@@ -169,7 +216,6 @@ const productController = {
                     title: req.body.title,
                     category: req.body.category,
                     department: req.body.department,
-                    productionBanner: req.file,
                     description: req.body.description,
                     manufacturer: req.body.manufacturer,
                     brand: req.body.brand,
@@ -187,7 +233,27 @@ const productController = {
                     }
                 });
 
-            return res.redirect("/");
+
+            await database.ProductPromotions.update({
+                discount: req.body.discount,
+                promotionalPrice: req.body.promotionalPrice,
+                paymentsConditions: req.body.paymentsConditions,
+                paymentsValues: req.body.paymentsValues,
+                paymentsShipping: req.body.paymentsShipping,
+            },
+                {
+                    where: {
+                        productId: req.params.id
+                    }
+                })
+            product.productionBanner = productionBanner[0].filename;
+            imgProduct.path = path[0].filename;
+
+            await product.save();
+            await imgProduct.save();
+
+
+            return res.redirect("/home");
         } catch (err) {
             return res.status(500).send({ message: err.message });
         }
