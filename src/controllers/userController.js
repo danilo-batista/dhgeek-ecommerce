@@ -31,7 +31,8 @@ const userController = {
             const passwordCript = await bcrypt.hash(password, 10)
             const user = await database.User.create({
                 email,
-                password: passwordCript
+                password: passwordCript,
+                typeId: 3
             })
             
             //return res.send(user);

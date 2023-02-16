@@ -6,7 +6,6 @@ const mainController = {
             const productsList = await database.Product.findAll(
                 {   
                     order: [['id', 'ASC']],
-                    limit: 10,
                     include: [{
                         model: database.ProductImages,
                         as: 'productImages',

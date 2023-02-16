@@ -106,6 +106,42 @@
                     <input type="text" name="fullPrice" value="<%= product.fullPrice %>">
                 </div>
                 </div>
+
+                <div class="container__dashboard-input input-banner">
+                    <label for="path">Imagem produto</label>
+                    <input type="file" name="path" id="path">
+                </div>
+
+                
+                <div class="container__dashboard-input">
+                    <label for="discount">Desconto:</label>
+                    <input type="number" name="discount" value="<%= product.discount %>">
+                </div>
+                </div>
+
+                <div class="container__dashboard-input">
+                    <label for="promotionalPrice">Preço promocional:</label>
+                    <input type="number" name="promotionalPrice" value="<%= product.promotionalPrice %>">
+                </div>
+                </div>
+                
+                <div class="container__dashboard-input">
+                    <label for="paymentsConditions">Parcelas:</label>
+                    <input type="text" name="paymentsConditions" value="<%= product.paymentsConditions %>">
+                </div>
+                </div>
+
+                <div class="container__dashboard-input">
+                    <label for="paymentsValues">Valor das Parcelas:</label>
+                    <input type="text" name="paymentsValues" value="<%= product.paymentsValues %>">
+                </div>
+                </div>
+
+                <div class="container__dashboard-input">
+                    <label for="paymentsShipping">Frete:</label>
+                    <input type="text" name="paymentsShipping" value="<%= product.paymentsShipping %>">
+                </div>
+                </div>
                 
                 <button type="submit">Atualizar</button>
            </form>
