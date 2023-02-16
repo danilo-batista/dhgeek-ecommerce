@@ -157,7 +157,7 @@ const productController = {
 
             })
 
-            return res.redirect("/");
+            return res.redirect("/home");
         } catch (err) {
             return res.status(500).send({ message: err.message });
         }
@@ -170,7 +170,7 @@ const productController = {
                     id: req.params.id
                 }
             });
-            return res.redirect("/");
+            return res.redirect("/home");
         } catch (err) {
             return res.status(500).send({ message: err.message });
         }
@@ -239,7 +239,7 @@ const productController = {
                 await imgProduct.save();
 
 
-            return res.redirect("/");
+            return res.redirect("/home");
         } catch (err) {
             return res.status(500).send({ message: err.message });
         }

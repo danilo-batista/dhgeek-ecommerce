@@ -1,0 +1,10 @@
+@media(max-width: 768px){
+    .msg-welcome{
+        display: none;
+    }
+}
+
+.msg-welcome{
+    font-weight: 700;
+    font-size: 20px;
+}

@@ -8,7 +8,8 @@ const orderController = require('../controllers/orderController');
 
 const { validationToken } = require("../middlewares/userMiddleware");
 
-routes.get('/', validationToken,  mainController.home);
+routes.get('/',  mainController.home);
+routes.get('/home', validationToken,  mainController.otherHome);
 routes.get('/contacts', contactController.getMessages);
 routes.get('/cart', cartController.getProducts);
 routes.get('/cartExample', validationToken, cartController.cart);
