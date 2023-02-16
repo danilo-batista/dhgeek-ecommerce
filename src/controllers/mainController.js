@@ -18,16 +18,16 @@ const mainController = {
                     }]
                 });
             
-            const { id } = req.userInfo;
-            const user = await database.User.findByPk(id, {
-                include:[{
-                    model: database.UserTypes,
-                    as: "user_types",
-                    required : true
-                    }]
-                });
+            // const {id} = req.userInfo;
+            // const user = await database.User.findByPk(id, {
+            //     include:[{
+            //         model: database.UserTypes,
+            //         as: "user_types",
+            //         required : true
+            //         }]
+            //     });
 
-            return res.render('../views/home', { productData: productsList, user });
+            return res.render('../views/home', { productData: productsList });
         } catch (err) {
             return res.status(500).send({ message: err.message });
         }
