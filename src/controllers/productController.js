@@ -157,7 +157,7 @@ const productController = {
 
             })
 
-            return res.send(product, productImg, promotions)
+            return res.redirect("/");
         } catch (err) {
             return res.status(500).send({ message: err.message });
         }
@@ -177,15 +177,31 @@ const productController = {
     },
 
     updateProduct: async (req, res) => {
+        const {path, productionBanner} = req.files;
         try {
-            const product = await database.Product.update(
+            const product = await database.Product.findByPk(req.params.id,
+                {
+                    include: [{
+                        model: database.ProductImages,
+                        as: 'productImages',
+                        required: true,
+                    },
+                    {
+                        model: database.ProductPromotions,
+                        as: 'productPromotions',
+                        required: true
+                    }]
+                });
+            
+            const imgProduct = await database.ProductImages.findOne({where:{productId: req.params.id}});
+
+             await database.Product.update(
                 {
                     name: req.body.name,
                     slug: req.body.slug,
                     title: req.body.title,
                     category: req.body.category,
                     department: req.body.department,
-                    productionBanner: req.files.productionBanner[0],
                     description: req.body.description,
                     manufacturer: req.body.manufacturer,
                     brand: req.body.brand,
@@ -203,16 +219,8 @@ const productController = {
                     }
                 });
 
-                const productImg = await database.ProductImages.update({
-                    path: req.files.path[0]
-                },
-                {
-                    where: {
-                        productId: req.params.id
-                    }
-                })
-
-                const promotions = await database.ProductPromotions.update({
+                
+                await database.ProductPromotions.update({
                     discount: req.body.discount, 
                     promotionalPrice: req.body.promotionalPrice,
                     paymentsConditions: req.body.paymentsConditions,
@@ -224,6 +232,12 @@ const productController = {
                         productId: req.params.id
                     }
                 })
+                product.productionBanner = productionBanner[0].filename;
+                imgProduct.path = path[0].filename;
+                
+                await product.save();
+                await imgProduct.save();
+
 
             return res.redirect("/");
         } catch (err) {
