@@ -128,7 +128,7 @@ const productController = {
                 title: req.body.title,
                 category: req.body.category,
                 department: req.body.department,
-                productionBanner: req.file.filename,
+                productionBanner: req.files.productionBanner[0].filename,
                 description: req.body.description,
                 manufacturer: req.body.manufacturer,
                 brand: req.body.brand,
@@ -141,7 +141,23 @@ const productController = {
                 fullPrice: req.body.fullPrice
             });
 
-            return res.send(product)
+            const productImg = await database.ProductImages.create({
+                path: req.files.path[0].filename,
+                productId: product.id
+            })
+
+            const promotions = await database.ProductPromotions.create({
+                discount: req.body.discount, 
+                promotionalPrice: req.body.promotionalPrice,
+                paymentsConditions: req.body.paymentsConditions,
+                paymentsValues: req.body.paymentsValues,
+                paymentsFee: "sem juros",
+                paymentsShipping: req.body.paymentsShipping,
+                productId: product.id
+
+            })
+
+            return res.send(product, productImg, promotions)
         } catch (err) {
             return res.status(500).send({ message: err.message });
         }
@@ -162,14 +178,14 @@ const productController = {
 
     updateProduct: async (req, res) => {
         try {
-            await database.Product.update(
+            const product = await database.Product.update(
                 {
                     name: req.body.name,
                     slug: req.body.slug,
                     title: req.body.title,
                     category: req.body.category,
                     department: req.body.department,
-                    productionBanner: req.file,
+                    productionBanner: req.files.productionBanner[0],
                     description: req.body.description,
                     manufacturer: req.body.manufacturer,
                     brand: req.body.brand,
@@ -186,6 +202,28 @@ const productController = {
                         id: req.params.id
                     }
                 });
+
+                const productImg = await database.ProductImages.update({
+                    path: req.files.path[0]
+                },
+                {
+                    where: {
+                        productId: req.params.id
+                    }
+                })
+
+                const promotions = await database.ProductPromotions.update({
+                    discount: req.body.discount, 
+                    promotionalPrice: req.body.promotionalPrice,
+                    paymentsConditions: req.body.paymentsConditions,
+                    paymentsValues: req.body.paymentsValues,
+                    paymentsShipping: req.body.paymentsShipping,
+                },
+                {
+                    where:{
+                        productId: req.params.id
+                    }
+                })
 
             return res.redirect("/");
         } catch (err) {

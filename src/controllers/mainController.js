@@ -6,7 +6,6 @@ const mainController = {
             const productsList = await database.Product.findAll(
                 {   
                     order: [['id', 'ASC']],
-                    limit: 10,
                     include: [{
                         model: database.ProductImages,
                         as: 'productImages',
@@ -19,7 +18,7 @@ const mainController = {
                     }]
                 });
             
-            const {id} = req.userInfo;
+            const { id } = req.userInfo;
             const user = await database.User.findByPk(id, {
                 include:[{
                     model: database.UserTypes,
