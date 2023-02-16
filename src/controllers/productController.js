@@ -40,7 +40,21 @@ const productController = {
                         required: true
                     }]
                 });
-            res.status(200).render('produto', { productData: product });
+            const productsList = await database.Product.findAll(
+                {
+                    order: [['id', 'ASC']],
+                    include: [{
+                        model: database.ProductImages,
+                        as: 'productImages',
+                        required: true
+                    },
+                    {
+                        model: database.ProductPromotions,
+                        as: 'productPromotions',
+                        required: true
+                    }]
+                });
+            res.status(200).render('produto', { productData: product, productsList: productsList });
 
         } catch (err) {
             return res.status(500).send({ message: err.message });
@@ -147,7 +161,7 @@ const productController = {
             })
 
             const promotions = await database.ProductPromotions.create({
-                discount: req.body.discount, 
+                discount: req.body.discount,
                 promotionalPrice: req.body.promotionalPrice,
                 paymentsConditions: req.body.paymentsConditions,
                 paymentsValues: req.body.paymentsValues,
@@ -177,7 +191,7 @@ const productController = {
     },
 
     updateProduct: async (req, res) => {
-        const {path, productionBanner} = req.files;
+        const { path, productionBanner } = req.files;
         try {
             const product = await database.Product.findByPk(req.params.id,
                 {
@@ -192,10 +206,10 @@ const productController = {
                         required: true
                     }]
                 });
-            
-            const imgProduct = await database.ProductImages.findOne({where:{productId: req.params.id}});
 
-             await database.Product.update(
+            const imgProduct = await database.ProductImages.findOne({ where: { productId: req.params.id } });
+
+            await database.Product.update(
                 {
                     name: req.body.name,
                     slug: req.body.slug,
@@ -219,24 +233,24 @@ const productController = {
                     }
                 });
 
-                
-                await database.ProductPromotions.update({
-                    discount: req.body.discount, 
-                    promotionalPrice: req.body.promotionalPrice,
-                    paymentsConditions: req.body.paymentsConditions,
-                    paymentsValues: req.body.paymentsValues,
-                    paymentsShipping: req.body.paymentsShipping,
-                },
+
+            await database.ProductPromotions.update({
+                discount: req.body.discount,
+                promotionalPrice: req.body.promotionalPrice,
+                paymentsConditions: req.body.paymentsConditions,
+                paymentsValues: req.body.paymentsValues,
+                paymentsShipping: req.body.paymentsShipping,
+            },
                 {
-                    where:{
+                    where: {
                         productId: req.params.id
                     }
                 })
-                product.productionBanner = productionBanner[0].filename;
-                imgProduct.path = path[0].filename;
-                
-                await product.save();
-                await imgProduct.save();
+            product.productionBanner = productionBanner[0].filename;
+            imgProduct.path = path[0].filename;
+
+            await product.save();
+            await imgProduct.save();
 
 
             return res.redirect("/home");
