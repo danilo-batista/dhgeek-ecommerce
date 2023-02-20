@@ -26,6 +26,12 @@
     height: 80px;
 }
 
+.products__card__area {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .products__card {
     position: relative;
     display: flex;
