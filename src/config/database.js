@@ -1,7 +1,7 @@
 /* Cria a configuração básica de acesso ao banco */
 const development = {
   "username": 'root',
-  "password": 'wB4%FGdgGRtF',
+  "password": '',
   "database": 'dhgeek',
   "host": 'localhost',
   "dialect": 'mysql',
